@@ -1,0 +1,11 @@
+node_modules
+dist
+*.log
+coverage
+docs
+config.json
+.eslintcache
+checkstyle.xml
+*.DS_Store
+package-lock.json
+yarn-error.log

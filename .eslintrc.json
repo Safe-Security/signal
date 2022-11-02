@@ -1,0 +1,25 @@
+{
+    "extends": ["eslint-config-safe-security"],
+    "ignorePatterns": [
+        "*.config.js",
+        "dist",
+        "docs",
+        "coverage",
+        "*.d.ts",
+        "*.test.*"
+    ],
+    "rules": {
+        "import/named": "warn",
+        "import/no-unresolved": [
+            "error",
+            {
+                "ignore": ["^@safe-security/"]
+            }
+        ],
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": ["error"],
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/naming-convention": "warn",
+        "@typescript-eslint/prefer-readonly-parameter-types": "off"
+    }
+}
