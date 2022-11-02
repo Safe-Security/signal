@@ -13,7 +13,13 @@ yarn docs
 
 This will generate HTML documentation in docs/index.html
 
+# Installation
 
+Coming soon...
+
+# A sample signal
+
+See [samples/full.json](/samples/full.json)
 # Developer Guide for building a SAFE Security connector
 
 Coming soon....
