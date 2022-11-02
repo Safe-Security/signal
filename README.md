@@ -2,9 +2,9 @@
 
 This package contains type definitions of common objects used in safe-security.
 
-# Documentation
+# Signal specification 
 
-To generate docs
+To generate the docs for signal specification
 
 ```
 yarn
@@ -12,3 +12,8 @@ yarn docs
 ```
 
 This will generate HTML documentation in docs/index.html
+
+
+# Developer Guide for building a SAFE Security connector
+
+Coming soon....
