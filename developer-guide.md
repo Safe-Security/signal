@@ -12,13 +12,13 @@ This document allows developers to build a custom integration with any tool whic
 ### Prerequisites
 - An instance of SAFE and its API credentials.
 
-We will post a simple CA signal to SAFE. On posting this signal, you will be able to see the Breach Likelehood and Financial Risk Exposure in SAFE UI. For all practical purposes, hundreds of signals would be needed to generate a useful risk scenario, but a single signal can be used to demonstrate the concept of building a SAFE connector.
+We will post a simple CA signal to SAFE. On posting this signal, you will be able to see the Breach Likelihood and Financial Risk Exposure in SAFE UI. For all practical purposes, hundreds of signals would be needed to generate a useful risk scenario, but a single signal can be used to demonstrate the concept of building a SAFE connector.
 
 Sample connectors written in popular programming languages can be found [here](/src/connectors/). Steps to build and run this are in their respective directories.
 
 # Use cases
-The following are some of the use cases for building a custom connetor.
-- As a SAFE customer, I have a product which generates secuurity events. SAFE does not natively support this tool and I want to submit signals to my SAFE instance.
+The following are some of the use cases for building a custom connector.
+- As a SAFE customer, I have a product which generates security events. SAFE does not natively support this tool and I want to submit signals to my SAFE instance.
 
 - As a community contributor, I want to build an integration so that all SAFE customers can deploy my connector.
 

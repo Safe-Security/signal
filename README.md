@@ -2,7 +2,7 @@ This project defines the [SAFE](https://safe.security) Security platform's Signa
 
 SAFE (Security Assessment Framework for Enterprise) is an enterprise-class, unified, and real-time Cyber Risk Quantification and Management (CRQM) platform. To learn more about SAFE see [https://docs.safe.security](https://docs.safe.security)
 
-# Who is the intented audience?
+# Who is the intended audience?
 The intended audience for this project are developers, solution-architects who
 - would like to understand the concept of Signal used in SAFE.
 - would like to build a custom connector to ingest more signals into their SAFE platform.
@@ -22,12 +22,12 @@ Examples:
 - A malware detection or a CA control failing is a negative security context.
 
 # Signal Specification
-See [README.md](nodejs/README.md) on steps for generating the specificaiton docs. You will need a nodejs environment to generate the docs.
+See [README.md](nodejs/README.md) on steps for generating the specification docs. You will need a nodejs environment to generate the docs.
 
 # Building a connector
-See the [connector developer guide](/developer-guide.md) documention. 
+See the [connector developer guide](/developer-guide.md) documentation. 
 
-# Signal exmaples
+# Signal examples
 See the folder [examples/samples](/examples/samples/)
 
 # Sample connectors (programs)
