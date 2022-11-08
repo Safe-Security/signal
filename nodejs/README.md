@@ -13,6 +13,15 @@ yarn docs
 
 This will generate HTML documentation in docs/index.html
 
+# Building this project
+```
+yarn
+yarn build
+yarn test
+yarn lint
+yarn docs
+```
+
 # Installation
 
 Coming soon...

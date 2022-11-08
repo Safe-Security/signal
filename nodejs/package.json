@@ -14,7 +14,7 @@
         "build": "tsc",
         "lint": "eslint src/**/*.ts",
         "test": "jest --coverage",
-        "clean": "rm -Rf dist && rm -Rf node_modules && rm -Rf docs",
+        "clean": "rm -Rf dist && rm -Rf node_modules && rm -Rf docs && rm -Rf coverage",
         "docs": "typedoc --darkHighlightTheme dark-plus --readme signal.md"
     },
     "devDependencies": {
