@@ -1,5 +1,5 @@
 # Overview
-The document contains steps to develop a SAFE connector. SAFE is an enterprise-class, unified, and real-time Cyber Risk Quantification and Management (CRQM) platform. To learn more about SAFE see [https://docs.safe.security](https://docs.safe.security)
+The document contains steps to develop a SAFE connector. 
 
 # SAFE Connector
 SAFE has the ability to ingest security signals from various sources to perform it analysis. These signals can be CA (Configuration Assessment), VA (Vulnerability Assessment), EDR (Endpoint Detection and Response), etc coming from various tools.
@@ -7,22 +7,6 @@ SAFE has the ability to ingest security signals from various sources to perform 
 Connectors for popular products and services are already available out of the box for SAFE's customer. See the [Integration Guide](https://docs.safe.security/safe3/docs/integration-guide) for the list.
 
 This document allows developers to build a custom integration with any tool which generates signals of interest.
-
-# What is a Signal?
-Signal, is the smallest unit of information that contains interesting information about an enterprise customer, the knowledge of which, allows SAFE to quantify risk for the customer.
-
-A signal contains two fundamental properties:
-
-A reference to an entity related to the customer. This can be a machine, identity, or file. [An identity operates on a file using a machine - this covers the entire software usage in the world]. 
-
-A security-context about the entity. Every signal MUST contain at least one interesting security information that contributes to risk. This information can be either a positive or a negative contributor to risk- score.
-
-Examples:
-- An antivirus agent installed on en Endpoint is a positive security context
-- A malware detection or a CA control failing is a negative security context.
-
-# Signal Specification
-See [README.md](/README.md) on steps for generating the specificaiton docs.
 
 # Quick Start Guide
 ### Prerequisites
