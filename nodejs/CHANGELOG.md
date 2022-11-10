@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Safe-Security/signal/compare/v1.1.0...v1.2.0) (2022-11-10)
+
+
+### Features
+
+* Added SecurityType ueba to ([f8b8ad9](https://github.com/Safe-Security/signal/commit/f8b8ad9e9fc67dae37d2dba8f0a9bfb4b673f044))
+
 # [1.1.0](https://github.com/Safe-Security/signal/compare/v1.0.0...v1.1.0) (2022-11-09)
 
 
