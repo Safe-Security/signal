@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Safe-Security/signal/compare/v1.2.0...v1.2.1) (2022-11-10)
+
+
+### Bug Fixes
+
+* Typo fix for ueba ([a70d565](https://github.com/Safe-Security/signal/commit/a70d565c01f5b51c999e7f1eaae588202affafb1))
+
 # [1.2.0](https://github.com/Safe-Security/signal/compare/v1.1.0...v1.2.0) (2022-11-10)
 
 
