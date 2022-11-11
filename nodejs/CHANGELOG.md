@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/Safe-Security/signal/compare/v1.4.0...v1.4.1) (2022-11-11)
+
+
+### Bug Fixes
+
+* change to trigger a publish ([f5c8bd0](https://github.com/Safe-Security/signal/commit/f5c8bd0666ef6791d56a0879ca950f7ac0e36f53))
+
 # [1.4.0](https://github.com/Safe-Security/signal/compare/v1.3.0...v1.4.0) (2022-11-11)
 
 
