@@ -25,6 +25,7 @@ const poorSignal: Signal = {
         severity: {
             type: "ccss",
             value: 9.2,
+            level: SeverityLevel.critical,
             cvss: {
                 version: "3.0",
                 baseScore: 9.2, 
@@ -90,6 +91,7 @@ const averageSignal: Signal = {
         severity: {
             type: "ccss",
             value: 9.2,
+            level: SeverityLevel.critical,
             cvss: {
                 version: "3.0",
                 baseScore: 9.2, 
@@ -155,6 +157,7 @@ const goodSignal: Signal = {
         severity: {
             type: "ccss",
             value: 9.2,
+            level: SeverityLevel.critical,
             cvss: {
                 version: "3.0",
                 baseScore: 9.2, 
