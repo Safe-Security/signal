@@ -27,9 +27,10 @@ const poorSignal: Signal = {
             value: 9.2,
             cvss: {
                 version: "3.0",
-                base: { score: 9.2, vector: {} },
-                temporal: { score: 9.2, vector: {} },
-                environmental: { score: 9.2, vector: {} }
+                baseScore: 9.2, 
+                vector: {},
+                temporalScore:  9.2, 
+                environmentalScore: 9.2,
             }
         },
         standardsMapping: [],
@@ -91,9 +92,10 @@ const averageSignal: Signal = {
             value: 9.2,
             cvss: {
                 version: "3.0",
-                base: { score: 9.2, vector: {} },
-                temporal: { score: 9.2, vector: {} },
-                environmental: { score: 9.2, vector: {} }
+                baseScore: 9.2, 
+                vector: {},
+                temporalScore:  9.2, 
+                environmentalScore: 9.2,
             }
         },
         standardsMapping: [],
@@ -155,9 +157,10 @@ const goodSignal: Signal = {
             value: 9.2,
             cvss: {
                 version: "3.0",
-                base: { score: 9.2, vector: {} },
-                temporal: { score: 9.2, vector: {} },
-                environmental: { score: 9.2, vector: {} }
+                baseScore: 9.2, 
+                vector: {},
+                temporalScore:  9.2, 
+                environmentalScore: 9.2,
             }
         },
         standardsMapping: [],

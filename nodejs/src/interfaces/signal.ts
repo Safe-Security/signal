@@ -652,7 +652,7 @@ export interface KillChainPhase {
 
 /**
  * The Common Vulnerability Scoring System (CVSS) provides a way to capture the principal characteristics of a vulnerability
- * and produce a numerical score reflecting its severity.
+ * and produce a numerical score reflecting its severity. This object is also used to represent CCSS 
  *
  * See [CVSS specification](https://www.first.org/cvss/)
  */
@@ -663,47 +663,26 @@ export interface CVSS {
     version: string;
 
     /**
-     * The base score and it is mandatory field.
+    * This represents the map of all metric and its value.
+    * Example: AV:A/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:L
+    */
+    vector?: { [key: string]: string };
+    
+    /**
+     * The CVSS score from 0-10
      */
-    base: CVSSBase;
+    baseScore: number;
 
     /**
      * Temporal score.
      */
-    temporal?: CVSSTemporal;
+    temporalScore?: number;
 
     /**
      * Environmental score
      */
-    environmental?: CVSSEnvironmental;
+    environmentalScore: number;
 }
-
-/**
- * Structure to represent the CVSS value and string vector.
- * See [CVSS specification](https://www.first.org/cvss/) for more details.
- */
-export interface CVSSBase {
-    /**
-     * The CVSS score from 0-10
-     */
-    score: number;
-
-    /**
-     * This represents the map of all metric and its value.
-     * Example: AV:A/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:L
-     */
-    vector?: { [key: string]: string };
-}
-
-/**
- * {@link CVSSBase}
- */
-type CVSSTemporal = CVSSBase;
-
-/**
- * {@link CVSSBase}
- */
-export type CVSSEnvironmental = CVSSBase;
 
 /**
  * The list of possible CVSS Metric names. This list is based off CVSS 3.1
