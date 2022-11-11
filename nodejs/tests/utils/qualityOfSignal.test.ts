@@ -28,7 +28,7 @@ const poorSignal: Signal = {
             cvss: {
                 version: "3.0",
                 baseScore: 9.2, 
-                vector: {},
+                vector: "AV:A/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:L",
                 temporalScore:  9.2, 
                 environmentalScore: 9.2,
             }
@@ -93,7 +93,7 @@ const averageSignal: Signal = {
             cvss: {
                 version: "3.0",
                 baseScore: 9.2, 
-                vector: {},
+                vector: "AV:A/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:L",
                 temporalScore:  9.2, 
                 environmentalScore: 9.2,
             }
@@ -158,7 +158,7 @@ const goodSignal: Signal = {
             cvss: {
                 version: "3.0",
                 baseScore: 9.2, 
-                vector: {},
+                vector: "AV:A/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:L",
                 temporalScore:  9.2, 
                 environmentalScore: 9.2,
             }

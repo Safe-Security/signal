@@ -663,10 +663,10 @@ export interface CVSS {
     version: string;
 
     /**
-    * This represents the map of all metric and its value.
+    * This represents the CVSS string of all metric and its value.
     * Example: AV:A/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:L
     */
-    vector?: { [key: string]: string };
+    vector?: string;
     
     /**
      * The CVSS score from 0-10
