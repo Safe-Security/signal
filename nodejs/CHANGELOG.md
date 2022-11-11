@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/Safe-Security/signal/compare/v1.4.1...v1.4.2) (2022-11-11)
+
+
+### Bug Fixes
+
+* updated unit test ([8e980aa](https://github.com/Safe-Security/signal/commit/8e980aa53b95b5d62d0d9c7bd12c938676abb5b8))
+
 ## [1.4.1](https://github.com/Safe-Security/signal/compare/v1.4.0...v1.4.1) (2022-11-11)
 
 
