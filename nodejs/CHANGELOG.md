@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/Safe-Security/signal/compare/v1.2.1...v1.3.0) (2022-11-11)
+
+
+### Features
+
+* removed redundant CVSS fields ([f7b3953](https://github.com/Safe-Security/signal/commit/f7b3953cec2b498baa7ea5c9be9ff8629853c48e))
+
 ## [1.2.1](https://github.com/Safe-Security/signal/compare/v1.2.0...v1.2.1) (2022-11-10)
 
 
