@@ -681,7 +681,7 @@ export interface CVSS {
     /**
      * Environmental score
      */
-    environmentalScore: number;
+    environmentalScore?: number;
 }
 
 /**
