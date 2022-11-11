@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/Safe-Security/signal/compare/v1.3.0...v1.4.0) (2022-11-11)
+
+
+### Features
+
+* changed CVSS vector to string for simplicity ([60277da](https://github.com/Safe-Security/signal/commit/60277daf6b53eba41e047197fd9e6bf9db16556b))
+
 # [1.3.0](https://github.com/Safe-Security/signal/compare/v1.2.1...v1.3.0) (2022-11-11)
 
 
