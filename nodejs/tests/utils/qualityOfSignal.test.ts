@@ -17,7 +17,7 @@ const poorSignal: Signal = {
     type: "default" as SignalType,
     description:
         "External accounts in Azure AD are accounts having different domain names than the one which is being used in corporate identities (such as Azure AD B2B collaboration, Microsoft Accounts, etc.). Usually, these accounts are not managed or monitored by the organization and can be targets for attackers looking to find ways to access the data without being noticed. External accounts with owner privileges should be removed from the subscription in order to prevent unmonitored access.<br>(Related policy: External accounts with owner permissions should be removed from your subscription)",
-    createdAt: new Date("2022-07-21T02:15:05.000Z"),
+    createdAt: new Date("2022-07-22T02:15:05.000Z"),
     confidence: 100,
     securityContext: {
         type: "ca" as SecurityType,
