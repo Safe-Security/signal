@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/Safe-Security/signal/compare/v1.4.2...v1.4.3) (2022-11-17)
+
+
+### Bug Fixes
+
+* added sample signals ([b02f9f1](https://github.com/Safe-Security/signal/commit/b02f9f10553886cf4227afc92785eac6f9e584b0))
+
 ## [1.4.2](https://github.com/Safe-Security/signal/compare/v1.4.1...v1.4.2) (2022-11-11)
 
 
