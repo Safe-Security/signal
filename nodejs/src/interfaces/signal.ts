@@ -663,9 +663,9 @@ export interface CVSS {
     version: string;
 
     /**
-    * This represents the CVSS string of all metric and its value.
-    * Example: AV:A/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:L
-    */
+     * This represents the CVSS string of all metric and its value.
+     * Example: AV:A/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:L
+     */
     vector?: string;
     
     /**

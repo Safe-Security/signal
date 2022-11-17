@@ -15,7 +15,8 @@
     "test": "jest --coverage",
     "clean": "rm -Rf dist && rm -Rf node_modules && rm -Rf docs && rm -Rf coverage",
     "docs": "typedoc --darkHighlightTheme dark-plus --readme signal.md",
-    "release": "semantic-release"
+    "release": "semantic-release",
+    "generate-sample-signals": "env SIGNAL_SAMPLES_DIR=./../examples/samples  ./node_modules/.bin/ts-node src/bin/generateSampleSignals.ts"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.1",
