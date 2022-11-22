@@ -75,14 +75,14 @@ export const getHighQualityVASignal = (): Signal => {
         }
       ],
       controlType: ControlType.detection,
-      "description": {
-        "technical": "A suitable technical description",
-        "businessImpact": "The potential business impact of this vulnerability"
+      description: {
+        technical: "A suitable technical description",
+        businessImpact: "The potential business impact of this vulnerability"
       },
-      "remediation": {
-        "description": "Describe how to remediate",
-        "reference": "http://packetstormsecurity.com/files/167872/rpc.py-0.6.0-Remote-Code-Execution.html",
-        "impact": "Describe the impact of remediation"
+      remediation: {
+        description: "Describe how to remediate",
+        reference: "http://packetstormsecurity.com/files/167872/rpc.py-0.6.0-Remote-Code-Execution.html",
+        impact: "Describe the impact of remediation"
       },
       tags:{
         resource: ["exploit","Patch"],

@@ -3,8 +3,10 @@ import { Signal } from "../interfaces/signal";
 import { qualityOfSignal } from "../utils/qualityOfSignal";
 
 import { getHighQualityCASignal } from "./getHighQualityCASignal";
+import { getHighQualityUbaSignal } from "./getHighQualityUbaSignal";
 import { getHighQualityVASignal } from "./getHighQualityVASignal";
 import { getSimpleCASignal } from "./getSimpleCASignal";
+import { getSimpleUbaSignal } from "./getSimpleUbaSignal";
 import { getSimpleVASignal } from "./getSimpleVASignal";
 import { saveSignal } from "./saveSignal";
 
@@ -25,8 +27,9 @@ const generateSignal = (signal: Signal, filename: string): void => {
 
   //EDR signals
 
-
-  //People signals
+  //User Behavior Analytics (People) signals
+  generateSignal(getHighQualityUbaSignal(), "high-quality-uba-signal.json");
+  generateSignal(getSimpleUbaSignal(),"simple-uba-signal.json");
 })();
 
 

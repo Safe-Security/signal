@@ -20,7 +20,6 @@ export const getSimpleCASignal = ():Signal => {
       type: EntityType.machine,
       name: "MyVirtualMachine.acme.com"
     },
-
     securityContext: {
       type: SecurityType.ca,
       status: { complianceStatus: ComplianceStatus.fail },

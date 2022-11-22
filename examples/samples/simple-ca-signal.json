@@ -7,7 +7,7 @@
     "nextSubmissionIntervalInMins": 1440
   },
   "description": "Select On (recommended) to have Windows Firewall with Advanced Security use the settings for this profile to filter network traffic. If you select Off, Windows Firewall with Advanced Security will not use any of the firewall rules or connection security rules for this profile.",
-  "createdAt": "2022-11-17T11:59:21.894Z",
+  "createdAt": "2022-11-22T05:57:52.129Z",
   "entity": {
     "type": "machine",
     "name": "MyVirtualMachine.acme.com"
