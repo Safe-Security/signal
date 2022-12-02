@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/Safe-Security/signal/compare/v1.4.3...v1.5.0) (2022-12-02)
+
+
+### Features
+
+* Addition of subType for securityContext ([28ca63c](https://github.com/Safe-Security/signal/commit/28ca63cd8b55d5368e03d05c29d3739635c15674))
+
 ## [1.4.3](https://github.com/Safe-Security/signal/compare/v1.4.2...v1.4.3) (2022-11-17)
 
 
