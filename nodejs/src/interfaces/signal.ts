@@ -266,6 +266,14 @@ export interface Signal {
         type: SecurityType;
 
         /**
+         * To provide additional context, subType is an optional field.
+         * Examples: 
+         * "UserAccess" can be a subType for type=uba
+         * "Blocked" can be a subType for type=firewall
+         */
+        subType?: string;
+
+        /**
          * The status of the signal.
          */
         status: Status;
