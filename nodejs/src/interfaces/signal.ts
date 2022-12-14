@@ -749,6 +749,7 @@ export enum SecurityType {
     dlp = "dlp",
     email = "email",
     uba= "uba",
+    waf="waf",
     others = "others"
 }
 
