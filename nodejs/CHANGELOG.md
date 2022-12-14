@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/Safe-Security/signal/compare/v1.5.0...v1.6.0) (2022-12-14)
+
+
+### Features
+
+* Added SecirityType.waf ([8c14d07](https://github.com/Safe-Security/signal/commit/8c14d0746136059b51776d2f14fe3b5cfc88a31f))
+
 # [1.5.0](https://github.com/Safe-Security/signal/compare/v1.4.3...v1.5.0) (2022-12-02)
 
 
