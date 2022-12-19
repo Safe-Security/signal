@@ -21,7 +21,7 @@
     "location": [],
     "comment": "Reporting this signal for quantification",
     "entity": {
-      "type": 0,
+      "type": "machine",
       "name": "acl-319cf959",
       "entityManagement": {},
       "entityAttributes": {
