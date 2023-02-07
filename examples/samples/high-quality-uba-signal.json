@@ -1,12 +1,12 @@
 {
   "version": "1.0",
   "id": "ff210e99-cd28-4a4a-a510-e0b865f6ce36",
-  "name": "Employee Personally Identifiable Information in the dark web",
+  "name": "User Personally Identifiable Information in the dark web",
   "source": {
     "name": "A-unique-signal-submitter-name",
     "nextSubmissionIntervalInMins": 1440
   },
-  "description": "This control checks whether the Personally Identifiable Information of employees of an organization is available in the dark web. PII information includes the first name, last name, city, county, state, phone number and gender.",
+  "description": "This control checks whether the Personally Identifiable Information of users of an organisation is available in the dark web. PII information includes the first name, last name, city, county, state, phone number and gender.",
   "firstSeen": "2022-08-07T00:00:00.000Z",
   "createdAt": "2022-11-22T05:57:52.132Z",
   "entity": {
@@ -15,58 +15,90 @@
     "entityAttributes": {
       "type": "User",
       "tags": {
-        "location": [
+        "locationName": [
           "Mumbai"
         ],
-        "dept": [
-          "Finance"
+        "departmentName": [
+          "Engineering"
         ],
-        "os": [
-          "CentOS 7"
+        "designationName": [
+          "SDE-1"
         ]
       }
     }
   },
   "securityContext": {
     "type": "uba",
+    "subType": "User-exposure",
     "status": {
       "complianceStatus": "pass"
     },
-    "evidence": {
-      "observationText": "No personal information breach detected"
-    },
-    "severity": {
-      "type": "ccss",
-      "value": 8
-    },
-    "attackPattern": [
-      {
-        "name": "Gather Victim Identity Information: Email Addresses",
-        "sourceName": "ATT&CK",
-        "mapping": {
-          "techniqueName": "Gather Victim Identity Information: Email Addresses",
-          "techniqueId": "T1589.002"
-        }
-      },
-      {
-        "name": "Compromise Accounts: Email Accounts",
-        "sourceName": "ATT&CK",
-        "mapping": {
-          "techniqueName": "Compromise Accounts: Email Accounts",
-          "techniqueId": "T1586.002"
-        }
-      }
-    ],
-    "controlType": "detection",
     "description": {
-      "technical": "A suitable technical description",
-      "businessImpact": "The potential business impact of this vulnerability"
+      "technical": "This control checks whether the Personally Identifiable Information of users of an organisation is available in the dark web. PII information includes the first name, last name, city, county, state, phone number and gender.",
+      "businessImpact": "Employee PII information can be used by adversaries for identity theft or fraud. It can also be used to guess the password pattern that may be used by that employee and gain access to business services used by the employee."
     },
     "remediation": {
       "description": "Closely monitor employee accounts with leaked PII data for identity theft",
       "reference": "NA",
       "impact": "NA"
     },
+    "evidence": {
+      "observationText": "Received Output - Number of exposures with PII exposed in the dark web in the past one year: 0<br>Expected Output - Number of exposures in the past one year: 0"
+    },
+    "severity": {
+      "type": "ccss",
+      "value": 9.5
+    },
+    "attackPattern": [
+      {
+        "name": "Gather Victim Identity Information: Email Addresses",
+        "sourceName": "ATT&CK",
+        "mapping": {
+          "techniqueName": "Email Addresses",
+          "techniqueId": "T1589.002"
+        }
+      },
+      {
+        "name": "Gather Victim Identity Information: Employee Names",
+        "sourceName": "ATT&CK",
+        "mapping": {
+          "techniqueName": "Employee Names",
+          "techniqueId": "T1589.003"
+        }
+      },
+      {
+        "name": "Search Closed Sources: Threat Intel Vendors",
+        "sourceName": "ATT&CK",
+        "mapping": {
+          "techniqueName": "Threat Intel Vendors",
+          "techniqueId": "T1597.001"
+        }
+      },
+      {
+        "name": "Search Closed Sources: Purchase Technical Data",
+        "sourceName": "ATT&CK",
+        "mapping": {
+          "techniqueName": "Purchase Technical Data",
+          "techniqueId": "T1597.002"
+        }
+      },
+      {
+        "name": "Compromise Accounts: Email Accounts",
+        "sourceName": "ATT&CK",
+        "mapping": {
+          "techniqueName": "Email Accounts",
+          "techniqueId": "T1586.002"
+        }
+      },
+      {
+        "name": "Establish Accounts: Social Media Accounts",
+        "sourceName": "ATT&CK",
+        "mapping": {
+          "techniqueName": "Social Media Accounts",
+          "techniqueId": "T1585.001"
+        }
+      }
+    ],
     "tags": {
       "resource": [
         "PII"

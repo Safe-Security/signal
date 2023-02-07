@@ -1,12 +1,12 @@
 {
   "version": "1.0",
   "id": "ff210e99-cd28-4a4a-a510-e0b865f6ce36",
-  "name": "Employee Personally Identifiable Information in the dark web",
+  "name": "User Personally Identifiable Information in the dark web",
   "source": {
     "name": "A-unique-signal-submitter-name",
     "nextSubmissionIntervalInMins": 1440
   },
-  "description": "This control checks whether the Personally Identifiable Information of employees of an organization is available in the dark web. PII information includes the first name, last name, city, county, state, phone number and gender.",
+  "description": "This control checks whether the Personally Identifiable Information of users of an organisation is available in the dark web. PII information includes the first name, last name, city, county, state, phone number and gender.",
   "createdAt": "2022-11-22T05:57:52.133Z",
   "entity": {
     "type": "identity",
