@@ -734,12 +734,12 @@ export enum SeverityLevel {
 
 /**
  * These are the list of different types of Cyber Security types of signals supported by this specification.
- * The enum type is specifcally string and not an auto-increment number. This is because dealing with numbers
+ * The enum type is specifically string and not an auto-increment number. This is because dealing with numbers
  * makes data-lake queries and reports hard to understand. Numeric values are useful for machines and highly
  * responsive applications.
  */
 export enum SecurityType {
-    generic = "generic",
+    finding = "finding",
     ca = "ca",
     va = "va",
     edr = "edr",
