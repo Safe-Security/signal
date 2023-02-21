@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/Safe-Security/signal/compare/v1.6.0...v1.6.1) (2023-02-21)
+
+
+### Bug Fixes
+
+* Renamed SecurityType generic to finding. ([2766559](https://github.com/Safe-Security/signal/commit/27665590522f0d9b296f70b11dbdb4b2d99d45e6))
+
 # [1.6.0](https://github.com/Safe-Security/signal/compare/v1.5.0...v1.6.0) (2022-12-14)
 
 
