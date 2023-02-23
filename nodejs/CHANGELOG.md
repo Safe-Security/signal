@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/Safe-Security/signal/compare/v1.6.1...v1.6.2) (2023-02-23)
+
+
+### Bug Fixes
+
+* Added entityType organization ([d9a9b1c](https://github.com/Safe-Security/signal/commit/d9a9b1c98f7da39ba8b9d6c7b0724620462d8000))
+
 ## [1.6.1](https://github.com/Safe-Security/signal/compare/v1.6.0...v1.6.1) (2023-02-21)
 
 
