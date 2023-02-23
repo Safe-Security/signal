@@ -919,7 +919,8 @@ export interface ConnectionAttributes {
 export enum EntityType {
     machine = "machine",
     file = "file",
-    identity = "identity"
+    identity = "identity",
+    organization = "organization"
 }
 
 type SignalUrl = string;
