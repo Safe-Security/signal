@@ -246,188 +246,11 @@ export interface Signal {
      *
      *
      */
-    securityContext?: {
-        /**
-         * The most important aspect of a single is the type of security context. It can be any of the following types or something that the
-         * signal consumer can interpret.
-         *
-         * Some common types of signals that impact scoring, are, but not limited to:
-         * - Vulnerability (NVD CVEs and custom)
-         * - Mis-Configuration info (CIS and custom)
-         * - Endpoint Detection and Response (malware, virus, etc)
-         * - Backup Success/Failure events from Backup and Recovery Software
-         * - IDP/IPS/NAC/Firewall events
-         * - DLP events
-         * - Email Security events
-         * - SIEM events
-         *
-         * So, the type of the event is a mandatory security context.
-         */
-        type: SecurityType;
+    securityContext?: SecurityContext;
 
-        /**
-         * To provide additional context, subType is an optional field.
-         * Examples: 
-         * "UserAccess" can be a subType for type=uba
-         * "Blocked" can be a subType for type=firewall
-         */
-        subType?: string;
+    //If the signal contains more than one security information,the information can be sent as array of security information.
 
-        /**
-         * The status of the signal.
-         */
-        status: Status;
-
-        /**
-         * To accommodate a way to capture evidence of the security context.
-         * Example: A reference to a screenshot or windows registry content that proves a missing configuration
-         */
-        evidence?: Evidence;
-
-        /**
-         * The severity of the signal is the most important aspect used in CRQ. Multiple vendors use their own severity system which
-         * make it very hard to consolidate various signals from various security tools. Common variations seen among popular security
-         * vendors include
-         *
-         * - 0-100 score
-         * - 0-10 score
-         * - 0-<no high value>
-         * - Low, Medium, High, Critical.
-         * - 0-5
-         *
-         * To add to complexity, a high number in some systems indicate high severity, whereas in others its the reverse.
-         *
-         * The most popular standard widely used across the industry are
-         *
-         * - CVSS - to communicate characteristics and severity of software vulnerabilities
-         * - CCSS - based on CVSS, but to characterize software security configuration issues.
-         *
-         * Non VA and CA systems or for that matter, for reporting any security incidents, usage of CVSS to characterize the incident
-         * severity is commonly used in the industry.
-         *
-         * The signal specification allows full characterization using CVSS/CCSS and yet allows any custom score.
-         */
-        severity: {
-            /**
-             * Indicates the type for severity. Example -cvss, ccss, custom
-             */
-            type: string;
-
-            /**
-             * A numeric value that indicates the severity. Its range will vary based on the type.
-             *
-             * Example: if type=cvss, the range will be from 0-10
-             */
-            value?: number;
-
-            /**
-             * Typically in the absence of a CVSS score, a coarse value is used here.
-             * This may be present even when a specific score is present.
-             *
-             * Example: A CVSS rating of 9.5 is considered to have a Severity Level = High
-             */
-            level?: SeverityLevel;
-
-            /**
-             * The Common Vulnerability Scoring System based score.
-             */
-            cvss?: CVSS;
-        };
-
-        /**
-         * When a signal maps to certain standard, like CIS, NVD, OWASP, etc, the mapping can be provided
-         */
-        standardsMapping?: StandardMapping[];
-
-        /**
-         * A list of relevant kill chains this signal contributes to.
-         */
-        killChainPhases?: KillChainPhase[];
-
-        /**
-         * A list of relevant attack patterns this signal contributes to.
-         */
-        attackPattern?: AttackPattern[];
-
-        /**
-         * See {@link killChainPhases}
-         */
-        campaign?: Campaign[];
-
-        /**
-         * To accommodate High Impact control values.
-         * Range from -10 to +10
-         * A negative impact translates to improvement in scoring
-         * A positive impact translates to penalty of score.
-         *
-         * 0= neutral (use severity to determine impact)
-         * 1=Low
-         * 2=Low-Medium
-         * 3=Medium
-         * 3=Medium-High
-         * 4=High
-         * 5=High-Critical
-         * 6=Critical
-         * 7=Urgent
-         * 8=BreachCertain
-         * 9=BreachConfirmed
-         */
-        degreeOfImpact?: number;
-
-        /**
-         * The possible effect of this signal.
-         */
-        effect?: Effect[];
-
-        /**
-         * The type of control.
-         */
-        controlType?: ControlType;
-
-        /**
-         * Description of the security details of this signal.
-         */
-        description?: {
-            /**
-             * A paragraph describing the signal where the target is the business user
-             */
-            business?: string | SignalUrl;
-
-            /**
-             * A paragraph describing the signal where the target is the technical user
-             */
-            technical?: string | SignalUrl;
-
-            /**
-             * A paragraph describing the business impact of this signal.
-             */
-            businessImpact?: string | SignalUrl;
-        };
-
-        /**
-         * If this is a signal that has relevant remediation steps. They are to be described here
-         */
-        remediation?: {
-            /**
-             * Description of the remediation.
-             */
-            description?: string | SignalUrl;
-
-            /**
-             * Any any references to web sites or documents
-             */
-            reference?: string | SignalUrl;
-
-            /**
-             * Describes the impact of remediation
-             */
-            impact?: string | SignalUrl;
-        };
-        /**
-         * A place holder to add name value pairs as tags/labels.
-         */
-        tags?: { [key: string]: string[] };
-    };
+    securityContexts?:SecurityContext[];
 
     /**
      * Information which do not describe the technical nature of the signal, but necessary for understanding the impact on business
@@ -1005,4 +828,187 @@ export interface Evidence {
      * Example: An PDF document or a screenshot stored elsewhere.
      */
     path?: string;
+}
+
+export interface SecurityContext{
+    /**
+     * The most important aspect of a single is the type of security context. It can be any of the following types or something that the
+     * signal consumer can interpret.
+     *
+     * Some common types of signals that impact scoring, are, but not limited to:
+     * - Vulnerability (NVD CVEs and custom)
+     * - Mis-Configuration info (CIS and custom)
+     * - Endpoint Detection and Response (malware, virus, etc)
+     * - Backup Success/Failure events from Backup and Recovery Software
+     * - IDP/IPS/NAC/Firewall events
+     * - DLP events
+     * - Email Security events
+     * - SIEM events
+     *
+     * So, the type of the event is a mandatory security context.
+     */
+    type: SecurityType;
+
+    /**
+     * To provide additional context, subType is an optional field.
+     * Examples: 
+     * "UserAccess" can be a subType for type=uba
+     * "Blocked" can be a subType for type=firewall
+     */
+    subType?: string;
+
+    /**
+     * The status of the signal.
+     */
+    status: Status;
+
+    /**
+     * To accommodate a way to capture evidence of the security context.
+     * Example: A reference to a screenshot or windows registry content that proves a missing configuration
+     */
+    evidence?: Evidence;
+
+    /**
+     * The severity of the signal is the most important aspect used in CRQ. Multiple vendors use their own severity system which
+     * make it very hard to consolidate various signals from various security tools. Common variations seen among popular security
+     * vendors include
+     *
+     * - 0-100 score
+     * - 0-10 score
+     * - 0-<no high value>
+     * - Low, Medium, High, Critical.
+     * - 0-5
+     *
+     * To add to complexity, a high number in some systems indicate high severity, whereas in others its the reverse.
+     *
+     * The most popular standard widely used across the industry are
+     *
+     * - CVSS - to communicate characteristics and severity of software vulnerabilities
+     * - CCSS - based on CVSS, but to characterize software security configuration issues.
+     *
+     * Non VA and CA systems or for that matter, for reporting any security incidents, usage of CVSS to characterize the incident
+     * severity is commonly used in the industry.
+     *
+     * The signal specification allows full characterization using CVSS/CCSS and yet allows any custom score.
+     */
+    severity: {
+        /**
+         * Indicates the type for severity. Example -cvss, ccss, custom
+         */
+        type: string;
+
+        /**
+         * A numeric value that indicates the severity. Its range will vary based on the type.
+         *
+         * Example: if type=cvss, the range will be from 0-10
+         */
+        value?: number;
+
+        /**
+         * Typically in the absence of a CVSS score, a coarse value is used here.
+         * This may be present even when a specific score is present.
+         *
+         * Example: A CVSS rating of 9.5 is considered to have a Severity Level = High
+         */
+        level?: SeverityLevel;
+
+        /**
+         * The Common Vulnerability Scoring System based score.
+         */
+        cvss?: CVSS;
+    };
+
+    /**
+     * When a signal maps to certain standard, like CIS, NVD, OWASP, etc, the mapping can be provided
+     */
+    standardsMapping?: StandardMapping[];
+
+    /**
+     * A list of relevant kill chains this signal contributes to.
+     */
+    killChainPhases?: KillChainPhase[];
+
+    /**
+     * A list of relevant attack patterns this signal contributes to.
+     */
+    attackPattern?: AttackPattern[];
+
+    /**
+     * See {@link killChainPhases}
+     */
+    campaign?: Campaign[];
+
+    /**
+     * To accommodate High Impact control values.
+     * Range from -10 to +10
+     * A negative impact translates to improvement in scoring
+     * A positive impact translates to penalty of score.
+     *
+     * 0= neutral (use severity to determine impact)
+     * 1=Low
+     * 2=Low-Medium
+     * 3=Medium
+     * 3=Medium-High
+     * 4=High
+     * 5=High-Critical
+     * 6=Critical
+     * 7=Urgent
+     * 8=BreachCertain
+     * 9=BreachConfirmed
+     */
+    degreeOfImpact?: number;
+
+    /**
+     * The possible effect of this signal.
+     */
+    effect?: Effect[];
+
+    /**
+     * The type of control.
+     */
+    controlType?: ControlType;
+
+    /**
+     * Description of the security details of this signal.
+     */
+    description?: {
+        /**
+         * A paragraph describing the signal where the target is the business user
+         */
+        business?: string | SignalUrl;
+
+        /**
+         * A paragraph describing the signal where the target is the technical user
+         */
+        technical?: string | SignalUrl;
+
+        /**
+         * A paragraph describing the business impact of this signal.
+         */
+        businessImpact?: string | SignalUrl;
+    };
+
+    /**
+     * If this is a signal that has relevant remediation steps. They are to be described here
+     */
+    remediation?: {
+        /**
+         * Description of the remediation.
+         */
+        description?: string | SignalUrl;
+
+        /**
+         * Any any references to web sites or documents
+         */
+        reference?: string | SignalUrl;
+
+        /**
+         * Describes the impact of remediation
+         */
+        impact?: string | SignalUrl;
+    };
+    /**
+     * A place holder to add name value pairs as tags/labels.
+     */
+    tags?: { [key: string]: string[] };
 }
