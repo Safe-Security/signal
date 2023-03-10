@@ -1,5 +1,5 @@
 /* eslint-disable functional/immutable-data */
-import { Signal } from "../interfaces/signal";
+import { SecurityContext, Signal } from "../interfaces/signal";
 
 /**
  * Determine the quality of the signal. The more information a signal contains,
@@ -10,7 +10,10 @@ import { Signal } from "../interfaces/signal";
  */
 // eslint-disable-next-line sonarjs/cognitive-complexity
 export const qualityOfSignal = (signal: Signal): number => {
-    const factors = [];
+    let factors: { value: number; weight: number }[] = [] as unknown as {
+      value: number;
+      weight: number;
+    }[];
 
     signal.name
         ? factors.push({ value: 60, weight: 1 })
@@ -52,39 +55,19 @@ export const qualityOfSignal = (signal: Signal): number => {
         ? factors.push({ value: 70, weight: 1 })
         : factors.push({ value: 30, weight: 1 });
 
-    signal.securityContext?.type
-        ? factors.push({ value: 70, weight: 1 })
-        : factors.push({ value: 10, weight: 1 });
-
-    signal.securityContext?.status.complianceStatus
-        ? factors.push({ value: 70, weight: 1 })
-        : factors.push({ value: 30, weight: 1 });
-
-    signal.securityContext?.severity
-        ? factors.push({ value: 50, weight: 1 })
-        : factors.push({ value: 30, weight: 1 });
-
-    signal.securityContext?.standardsMapping?.length
-        ? factors.push({ value: 200, weight: 1 })
-        : factors.push({ value: 50, weight: 1 });
-
-    signal.securityContext?.attackPattern &&
-    signal.securityContext.attackPattern[0].mapping?.techniqueId
-        ? factors.push({ value: 200, weight: 1 })
-        : factors.push({ value: 50, weight: 1 });
-
-    signal.securityContext?.degreeOfImpact
-        ? factors.push({ value: 200, weight: 1 })
-        : factors.push({ value: 50, weight: 1 });
-
-    signal.securityContext?.controlType
-        ? factors.push({ value: 60, weight: 1 })
-        : factors.push({ value: 50, weight: 1 });
-
-    signal.securityContext?.effect
-        ? factors.push({ value: 200, weight: 1 })
-        : factors.push({ value: 50, weight: 1 });
-
+        if (signal.securityContext) {
+          const securityContextfactors = getSecurityContextFactors(
+            signal.securityContext
+          );
+          factors = [...factors, ...securityContextfactors];
+        }
+        if (signal.securityContexts) {
+          signal.securityContexts.forEach((securityContext) => {
+            const securityContextfactors =
+              getSecurityContextFactors(securityContext);
+            factors = [...factors, ...securityContextfactors];
+          });
+        }
     const values = factors.map(item => item.value);
     const weights = factors.map(item => item.weight);
 
@@ -102,3 +85,42 @@ const weightedAverage = (values: number[], weights: number[]): number => {
     );
     return sum / weightSum;
 };
+const getSecurityContextFactors = (
+  securityContext: SecurityContext
+): { value: number; weight: number }[] => {
+    const newFactor:{ value: number; weight: number }[]=[];
+  securityContext?.type
+    ? newFactor.push({ value: 70, weight: 1 })
+    : newFactor.push({ value: 10, weight: 1 });
+
+  securityContext?.status.complianceStatus
+    ? newFactor.push({ value: 70, weight: 1 })
+    : newFactor.push({ value: 30, weight: 1 });
+
+  securityContext?.severity
+    ? newFactor.push({ value: 50, weight: 1 })
+    : newFactor.push({ value: 30, weight: 1 });
+
+  securityContext?.standardsMapping?.length
+    ? newFactor.push({ value: 200, weight: 1 })
+    : newFactor.push({ value: 50, weight: 1 });
+
+  securityContext?.attackPattern &&
+  securityContext.attackPattern[0].mapping?.techniqueId
+    ? newFactor.push({ value: 200, weight: 1 })
+    : newFactor.push({ value: 50, weight: 1 });
+
+  securityContext?.degreeOfImpact
+    ? newFactor.push({ value: 200, weight: 1 })
+    : newFactor.push({ value: 50, weight: 1 });
+
+  securityContext?.controlType
+    ? newFactor.push({ value: 60, weight: 1 })
+    : newFactor.push({ value: 50, weight: 1 });
+
+  securityContext?.effect
+    ? newFactor.push({ value: 200, weight: 1 })
+    : newFactor.push({ value: 50, weight: 1 });
+  return newFactor;
+};
+

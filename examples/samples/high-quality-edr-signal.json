@@ -25,7 +25,7 @@
       }
     }
   },
-  "securityContext": [
+  "securityContexts": [
     {
       "type": "edr",
       "status": {
@@ -49,35 +49,12 @@
           "sourceName": "ATT&CK"
         }
       ],
-      "source": {
-        "name": "security.safe.some-edr-tool"
-      },
-      "firstSeen": "2023-03-08T11:42:28Z",
-      "lastSeen": "2023-03-09T15:30:28Z",
-      "confidence": 100,
-      "createdAt": "2023-03-09T18:29:16.589Z",
       "tags": {
-        "detectionId": "999e1e2a-effc-4317-b7b3-31e184d15481",
-        "detectionTime": "2023-03-09T11:42:28Z",
+        "detectionId": ["999e1e2a-effc-4317-b7b3-31e184d15481"],
+        "detectionTime": ["2023-03-09T11:42:28Z"],
         "files": [
-          {
-            "name": "malware.exe",
-            "checksumSha256": "550a68076cd1bade01da6e7a359d5642d1222934a1a862f5045e17374ef89539",
-            "checksumMd5": "78979bd9288153580175da12d95f05b5",
-            "filePath": "/usr/bin/malware.exe",
-            "commandLine": "/usr/bin/malware.exe --systemd-watchdog",
-            "parentchecksumSha256": "",
-            "parentchecksumMd5": ""
-          },
-          {
-            "name": "malwareSubProcess.exe",
-            "checksumSha256": "550a68076cd1bade01da6e7a359d5642d1222934a1a862f5045e17374ef89539",
-            "checksumMd5": "78979bd9288153580175da12d95f05b5",
-            "filePath": "/usr/bin/malwareSubProcess.exe",
-            "commandLine": "/usr/bin/malwareSubProcess.exe --systemd-watchdog",
-            "parentchecksumSha256": "",
-            "parentchecksumMd5": ""
-          }
+          "{\"name\":\"malware.exe\",\"checksumSha256\":\"550a68076cd1bade01da6e7a359d5642d1222934a1a862f5045e17374ef89539\",\"checksumMd5\":\"78979bd9288153580175da12d95f05b5\",\"filePath\":\"/usr/bin/malware.exe\",\"commandLine\":\"/usr/bin/malware.exe --systemd-watchdog\",\"parentchecksumSha256\":\"\",\"parentchecksumMd5\":\"\"}",
+          "{\"name\":\"malwareSubProcess.exe\",\"checksumSha256\":\"9900a68076cd1bade01da6e7a359d5642d1222934a1a862f5045e17374ef89539\",\"checksumMd5\":\"87179bd9288153580175da12d95f05b5\",\"filePath\":\"/usr/bin/malwareSubProcess.exe\",\"commandLine\":\"/usr/bin/malwareSubProcess.exe --systemd-watchdog\",\"parentchecksumSha256\":\"\",\"parentchecksumMd5\":\"\"}"
         ]
       }
     },
@@ -104,28 +81,16 @@
           "sourceName": "ATT&CK"
         }
       ],
-      "source": {
-        "name": "security.safe.some-edr-tool"
-      },
-      "firstSeen": "2023-03-08T11:42:28Z",
-      "lastSeen": "2023-03-09T11:42:28Z",
-      "confidence": 100,
-      "createdAt": "2023-03-09T11:42:28Z",
       "tags": {
-        "detectionId": "111e1e2a-effc-4317-b7b3-31e184d15481",
-        "detectionTime": "2023-03-09T11:42:28Z",
+        "detectionId": ["111e1e2a-effc-4317-b7b3-31e184d15481"],
+        "detectionTime": ["2023-03-09T11:42:28Z"],
         "files": [
-          {
-            "name": "someothermalware.exe.exe",
-            "checksumSha256": "550a68076cd1bade01da6e7a359d5642d1222934a1a862f5045e17374ef89539",
-            "checksumMd5": "78979bd9288153580175da12d95f05b5",
-            "filePath": "/usr/bin/someothermalware.exe.exe",
-            "commandLine": "/usr/bin/someothermalware.exe.exe --systemd-watchdog",
-            "parentchecksumSha256": "",
-            "parentchecksumMd5": ""
-          }
+          "{\"name\":\"someothermalware.exe\",\"checksumSha256\":\"550a68076cd1bade01da6e7a359d5642d1222934a1a862f5045e17374ef89539\",\"checksumMd5\":\"78979bd9288153580175da12d95f05b5\",\"filePath\":\"/usr/bin/someothermalware.exe\",\"commandLine\":\"/usr/bin/someothermalware.exe --systemd-watchdog\",\"parentchecksumSha256\":\"\",\"parentchecksumMd5\":\"\"}"
         ]
       }
-    }
-  ]
+    }],
+  "firstSeen": "2023-03-08T11:42:28Z",
+  "lastSeen": "2023-03-09T11:42:28Z",
+  "confidence": 100,
+  "createdAt": "2023-03-09T11:42:28Z"
 }
