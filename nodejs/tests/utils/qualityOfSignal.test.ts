@@ -296,8 +296,6 @@ const averageSignalWithInstances: Signal = {
   createdAt: new Date("2023-03-09T11:42:28Z")
 };
 
-
-
 describe("Test quality of signals for various types of signals", () => {
   it("should check that a average quality signal is indeed gets a quality value less than 33", async () => {
     const quality = qualityOfSignal(poorSignal);
@@ -315,7 +313,7 @@ describe("Test quality of signals for various types of signals", () => {
   it("should check that a average quality signal is indeed gets a quality value greater than 66", async () => {
     const quality = qualityOfSignal(goodSignal);
     console.log(`Quality = ${quality}`);
-   expect(quality).toBeGreaterThan(66);
+    expect(quality).toBeGreaterThan(66);
   });
 
   it("should check that a average quality signal containing instances is indeed gets a quality value greater than 33 and less than 66", async () => {
