@@ -28,8 +28,8 @@ const generateSignal = (signal: Signal, filename: string): void => {
   generateSignal(getHighQualityVASignal(), "high-quality-va-signal.json");
 
   //EDR signals
-  generateSignal(getSimpleEDRSignal(), "simple-edr-signal1.json");
-  generateSignal(getHighQualityEDRSignal(), "high-quality-edr-signal2.json");
+  generateSignal(getSimpleEDRSignal(), "simple-edr-signal.json");
+  generateSignal(getHighQualityEDRSignal(), "high-quality-edr-signal.json");
   //User Behavior Analytics (People) signals
   generateSignal(getHighQualityUbaSignal(), "high-quality-uba-signal.json");
   generateSignal(getSimpleUbaSignal(),"simple-uba-signal.json");
