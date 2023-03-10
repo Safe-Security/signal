@@ -45,15 +45,19 @@
         }
       ],
       "tags": {
-        "detectionId": "[999e1e2a-effc-4317-b7b3-31e184d15481]",
-        "detectionTime": "[2023-03-08T11:42:28Z]",
+        "detectionId": [
+          "999e1e2a-effc-4317-b7b3-31e184d15481"
+        ],
+        "detectionTime": [
+          "2023-03-08T11:42:28Z"
+        ],
         "files": [
           "{\"name\":\"suspicious-file\",\"checksumSha256\":\"550a68076cd1bade01da6e7a359d5642d1222934a1a862f5045e17374ef89539\",\"checksumMd5\":\"78979bd9288153580175da12d95f05b5\",\"filePath\":\"/usr/bin/suspicious-file\",\"commandLine\":\"/usr/bin/suspicious-file --systemd-watchdog\",\"parentchecksumSha256\":\"\",\"parentchecksumMd5\":\"\"}"
         ]
       }
     }
   ],
-  "firstSeen": "2023-03-08T11:42:28Z",
+  "firstSeen": "2023-03-08T11:42:28.000Z",
   "confidence": 100,
-  "createdAt": "2023-03-09T11:42:28Z"
+  "createdAt": "2023-03-09T11:42:28.000Z"
 }
