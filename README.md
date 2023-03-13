@@ -21,6 +21,7 @@ Examples:
 - An antivirus agent installed on en Endpoint is a positive security context
 - A malware detection or a CA control failing is a negative security context.
 
+
 # Signal Specification
 See [README.md](nodejs/README.md) on steps for generating the specification docs. You will need a nodejs environment to generate the docs.
 
