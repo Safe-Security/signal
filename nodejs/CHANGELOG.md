@@ -1,3 +1,10 @@
+## [1.6.3](https://github.com/Safe-Security/signal/compare/v1.6.2...v1.6.3) (2023-03-13)
+
+
+### Bug Fixes
+
+* updating readme to force a release publish ([8c081b3](https://github.com/Safe-Security/signal/commit/8c081b313f20d45a8d541ed24811de4f22ce0818))
+
 ## [1.6.2](https://github.com/Safe-Security/signal/compare/v1.6.1...v1.6.2) (2023-02-23)
 
 
