@@ -22,14 +22,18 @@ Examples:
 - A malware detection or a CA control failing is a negative security context.
 
 
-# Signal Specification
-See [README.md](nodejs/README.md) on steps for generating the specification docs. You will need a nodejs environment to generate the docs.
-
-# Building a connector
-See the [connector developer guide](/developer-guide.md) documentation. 
 
 # Signal examples
 See the folder [examples/samples](/examples/samples/)
 
-# Sample connectors (programs)
-Read the connector developer guide or jump straight to sample programs in various programming languages in [examples/connectors](/examples/connectors/)
+# Signal Specification
+- NodeJS Developer: See the typescript interface for signal at [nodejs/src/interfaces/signal.ts](nodejs/src/interfaces/signal.ts). See [nodejs/README.md](nodejs/README.md) on steps for generating the specification docs. You will need a nodejs environment to generate the docs.
+
+- C# .NET Developer: 
+
+- Python Developer: 
+
+- Java Developer: 
+
+# Building a connector
+See the [connector developer guide](/developer-guide.md) documentation. 
