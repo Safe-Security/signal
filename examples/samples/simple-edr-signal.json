@@ -9,12 +9,12 @@
   "description": "A suspicious script launched that might be related to malicious activity. A variety of malware families use this technique. Review the script.",
   "entity": {
     "type": "machine",
-    "name": "MyVirtualMachine.acme.com",
+    "name": "VM.acme.com",
     "entityAttributes": {
       "ipAddresses": [
         {
           "name": "Ip",
-          "ipv4": "10.0.6.173"
+          "ipv4": "10.0.6.113"
         }
       ],
       "type": "Windows Server 2019 Datacenter 64 bit Edition Version 1809 Build 17763"
@@ -32,6 +32,7 @@
       },
       "severity": {
         "type": "custom",
+        "value": 7,
         "level": "medium"
       },
       "attackPattern": [

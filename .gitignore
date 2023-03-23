@@ -9,3 +9,11 @@ checkstyle.xml
 *.DS_Store
 package-lock.json
 yarn-error.log
+/csharp/src/App/bin/Debug
+/csharp/src/App/obj
+/csharp/src/Signals.Library/bin/Debug/net6.0
+/csharp/src/Signals.Library/obj
+/.vs
+/csharp/.vs
+/csharp/src/.vs/SignalsSampleApp
+/csharp/src/App/.vs
