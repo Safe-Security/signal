@@ -473,12 +473,12 @@ export interface KillChainPhase {
     /**
      * The name of the chain. Example: lockheed-martin-cyber-kill-chain, mitre-attack
      */
-    killChainName: string;
+    name: string;
 
     /**
      * The phase. Example: reconnaissance, credential-access
      */
-    killChainPhase: string;
+    phase: string;
 }
 
 /**
