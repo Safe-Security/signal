@@ -2,7 +2,6 @@
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using Signals.Library.Constants;
-using System.Collections.Generic;
 
 namespace Signals.Library.Models
 {
@@ -39,8 +38,8 @@ namespace Signals.Library.Models
         [JsonProperty("degreeOfImpact")]
         public int DegreeOfImpact { get; set; }
 
-        [JsonProperty("effect",ItemConverterType=typeof(StringEnumConverter))]
-       // [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
+        [JsonProperty("effect", ItemConverterType = typeof(StringEnumConverter))]
+        // [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
         public List<Effect>? Effect { get; set; }
 
         [JsonProperty("controlType")]

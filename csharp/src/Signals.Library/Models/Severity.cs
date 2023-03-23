@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Signals.Library.Constants;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Signals.Library.Models
 {

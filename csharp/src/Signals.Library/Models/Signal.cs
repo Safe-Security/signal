@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System;
-using System.Collections.Generic;
+using Newtonsoft.Json.Serialization;
+using Signals.Library.Constants;
 
 namespace Signals.Library.Models
 {
@@ -14,7 +14,8 @@ namespace Signals.Library.Models
         public string Id { get; set; }
 
         [JsonProperty("type")]
-        public string? Type { get; set; }//Enum
+        [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
+        public SignalType? Type { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }

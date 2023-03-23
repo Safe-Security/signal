@@ -1,11 +1,10 @@
 ﻿using Newtonsoft.Json;
-using System.Collections.Generic;
 
 namespace Signals.Library.Models
 {
     public class ConnectionAttributes
     {
-       
+
         [JsonProperty("type")]
         public string Type { get; set; }
 

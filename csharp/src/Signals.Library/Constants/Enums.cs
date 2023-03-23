@@ -22,7 +22,8 @@ namespace Signals.Library.Constants
     };
 
     public enum SecurityType
-    {   Finding,
+    {
+        Finding,
         Ca,
         Va,
         Edr,

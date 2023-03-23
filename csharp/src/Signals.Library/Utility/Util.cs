@@ -17,7 +17,7 @@ namespace Signals.Library.Utility
             {
                 throw new Exception($"Directory {directoryPath} doesn't exist please check path");
             }
-            if(files.Count== 0 )
+            if (files.Count == 0)
             {
                 throw new Exception($"Directory {directoryPath} is empty, please place some sample signals in it");
             }

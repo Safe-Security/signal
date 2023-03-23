@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
 using Signals.Library.Constants;
-using System.Collections.Generic;
 
 namespace Signals.Library.Models
 {
@@ -31,7 +29,7 @@ namespace Signals.Library.Models
         public SeverityLevel? AvailabilityRequirement { get; set; }
 
         [JsonProperty("tags")]
-        public Dictionary<string,string[]> Tags { get; set; }
+        public Dictionary<string, string[]> Tags { get; set; }
 
     }
 }

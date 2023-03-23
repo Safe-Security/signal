@@ -6,7 +6,7 @@ namespace Signals.Library.Communication.Models
     {
         [JsonProperty("accessToken")]
         public string AccessToken { get; set; }
-       
+
         [JsonProperty("status")]
         public string Status { get; set; }
 

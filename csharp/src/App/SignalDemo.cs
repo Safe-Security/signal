@@ -12,16 +12,18 @@ namespace App
 {
     class SignalDemo : ISignalDemo
     {
-        private ICommunication Communication { get; }
-
-        private Settings Settings { get; } 
+        private ICommunication Communication { get; } 
+        private Settings Settings { get; }
+        
+        
         public SignalDemo(Settings settings)
-            
+
         {
             Settings = settings;
             Communication = new Communication(Settings.SafeUrl, Settings.ApiUsername, Settings.ApiPassword);
 
         }
+
         public async Task Run()
         {
             try
@@ -57,7 +59,7 @@ namespace App
             }
             catch (Exception ex)
             {
-                 Console.WriteLine($"Error-{ex.Message}");
+                Console.WriteLine($"Error-{ex.Message}");
                 throw;
             }
 

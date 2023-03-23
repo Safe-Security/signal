@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Signals.Library.Constants
+﻿namespace Signals.Library.Constants
 {
     static class ApiEndpoints
     {
