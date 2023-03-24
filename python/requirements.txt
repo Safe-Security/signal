@@ -1,0 +1,2 @@
+dataclasses-json
+requests==2.28.1
