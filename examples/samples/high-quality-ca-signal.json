@@ -13,9 +13,9 @@
     "type": "machine",
     "name": "MyVirtualMachine.acme.com",
     "entityAttributes": {
-      "criticality": "medium",
-      "confidentialityRequirement": "medium",
-      "integrityRequirement": "critical",
+      "criticality": "high",
+      "confidentialityRequirement": "high",
+      "integrityRequirement": "high",
       "availabilityRequirement": "high",
       "tags": {
         "location": [

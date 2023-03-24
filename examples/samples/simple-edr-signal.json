@@ -32,6 +32,7 @@
       },
       "severity": {
         "type": "custom",
+        "value": 7,
         "level": "medium"
       },
       "attackPattern": [
