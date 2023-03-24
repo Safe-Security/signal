@@ -13,9 +13,9 @@
     "type": "machine",
     "name": "MyVirtualMachine.acme.com",
     "entityAttributes": {
-      "criticality": "medium",
-      "confidentialityRequirement": "medium",
-      "integrityRequirement": "critical",
+      "criticality": "high",
+      "confidentialityRequirement": "high",
+      "integrityRequirement": "high",
       "availabilityRequirement": "high",
       "tags": {
         "location": [
@@ -37,6 +37,7 @@
     },
     "severity": {
       "type": "cvss",
+	    "value":8,
       "cvss": {
         "version": "3.1",
         "baseScore": 9.8,

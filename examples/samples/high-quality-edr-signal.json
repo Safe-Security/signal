@@ -37,6 +37,7 @@
       },
       "severity": {
         "type": "custom",
+        "value": 9,
         "level": "high"
       },
       "attackPattern": [
@@ -73,6 +74,7 @@
       },
       "severity": {
         "type": "custom",
+        "value": 9,
         "level": "high"
       },
       "attackPattern": [
