@@ -18,3 +18,4 @@ yarn-error.log
 /csharp/src/.vs/SignalsSampleApp
 /csharp/src/App/.vs
 __pycache__/
+.dccache
