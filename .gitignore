@@ -17,3 +17,4 @@ yarn-error.log
 /csharp/.vs
 /csharp/src/.vs/SignalsSampleApp
 /csharp/src/App/.vs
+__pycache__/
