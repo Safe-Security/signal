@@ -1,10 +1,10 @@
 import os
-import json
 
 from communication import Communication
+from config import Config
 from dataclass.signal import Signal
 
-from utils.constants import BASE_URL, POST_SIGNALS_API
+from utils.constants import POST_SIGNALS_API
 
 """
 Reads sample signal jsons and submit it to Safe
@@ -24,7 +24,7 @@ def submitSampleSignals():
                 signal = Signal.from_json(signalData)
                 client = Communication()
                 headers = {'Accept' : 'application/json', 'Content-Type' : 'application/json'}
-                response = client.post(BASE_URL+POST_SIGNALS_API, body=signal.to_json(), extra_headers=headers)
+                response = client.post(Config.base_url+POST_SIGNALS_API, body=signal.to_json(), extra_headers=headers)
                 print(response.text)
             except Exception as err:
                 print(
