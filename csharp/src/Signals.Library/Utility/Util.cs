@@ -4,8 +4,21 @@ using System.Security;
 
 namespace Signals.Library.Utility
 {
+    /// <summary>
+    /// Utility contains common helper methods
+    /// </summary>
     public static class Util
     {
+        /// <summary>
+        /// Gets all files from directory.
+        /// </summary>
+        /// <param name="directoryPath">The directory path.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception">
+        /// Directory {directoryPath} doesn't exist please check path
+        /// or
+        /// Directory {directoryPath} is empty, please place some sample signals in it
+        /// </exception>
         public static List<string> GetAllFilesFromDirectory(string directoryPath)
         {
             List<string> files = new List<string>();
@@ -24,6 +37,11 @@ namespace Signals.Library.Utility
             return files;
         }
 
+        /// <summary>
+        /// Converts to securestring.
+        /// </summary>
+        /// <param name="plainString">The plain string.</param>
+        /// <returns></returns>
         public static SecureString ToSecureString(string plainString)
         {
             if (string.IsNullOrEmpty(plainString))
@@ -43,8 +61,10 @@ namespace Signals.Library.Utility
         /// <summary>
         /// Converts a secure string to a plain string
         /// </summary>
-        /// <param name="secureString"></param>
-        /// <returns></returns>
+        /// <param name="secureString">The secure string.</param>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
         public static string ToString(SecureString secureString)
         {
             if (secureString == null)
@@ -66,6 +86,11 @@ namespace Signals.Library.Utility
             return result;
         }
 
+        /// <summary>
+        /// Validates the specified object using data annotation.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <returns>bool true/false</returns>
         public static bool Validate(object obj)
         {
             var results = new List<ValidationResult>();
