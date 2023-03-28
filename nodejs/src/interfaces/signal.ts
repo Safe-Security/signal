@@ -648,7 +648,7 @@ export interface EntityAttributes {
 
     /**
      * For any information system to serve its purpose, the information must be available when it is needed.
-     * This field captures the integrity requirement of the entity for which the signal is referring to.
+     * This field captures the availability requirement of the entity for which the signal is referring to.
      */
     availabilityRequirement?: SeverityLevel;
 
