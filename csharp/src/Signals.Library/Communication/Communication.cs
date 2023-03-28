@@ -8,16 +8,56 @@ using System.Text;
 
 namespace Signals.Library.Communication
 {
+    /// <summary>
+    /// Responsible for making connection with SAFE API and submit signals
+    /// </summary>
+    /// <seealso cref="Signals.Library.Communication.ICommunication" />
     public class Communication : ICommunication
     {
+        /// <summary>
+        /// Gets the safe URL.
+        /// </summary>
+        /// <value>
+        /// The safe URL.
+        /// </value>
         private string SafeUrl { get; }
+        /// <summary>
+        /// Gets the rest API username.
+        /// </summary>
+        /// <value>
+        /// The rest API username.
+        /// </value>
         private string RestApiUsername { get; }
+        /// <summary>
+        /// Gets the rest API password.
+        /// </summary>
+        /// <value>
+        /// The rest API password.
+        /// </value>
         private SecureString RestApiPassword { get; }
 
+        /// <summary>
+        /// Gets or sets the authentication API response.
+        /// </summary>
+        /// <value>
+        /// The authentication API response.
+        /// </value>
         private AuthResponse? AuthApiResponse { get; set; }
 
+        /// <summary>
+        /// Gets or sets the client.
+        /// </summary>
+        /// <value>
+        /// The client.
+        /// </value>
         private HttpClient Client { get; set; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Communication"/> class.
+        /// </summary>
+        /// <param name="safeUrl">The safe URL.</param>
+        /// <param name="restApiUserName">Name of the rest API user.</param>
+        /// <param name="restApiPassword">The rest API password.</param>
         public Communication(string safeUrl, string restApiUserName, SecureString restApiPassword)
         {
             SafeUrl = safeUrl;
@@ -27,6 +67,10 @@ namespace Signals.Library.Communication
         }
 
 
+        /// <summary>
+        /// Gets the access token.
+        /// </summary>
+        /// <returns></returns>
         public async Task<string> GetAccessToken()
         {
             try
@@ -57,6 +101,11 @@ namespace Signals.Library.Communication
             return AuthApiResponse?.AccessToken;
         }
 
+        /// <summary>
+        /// Submits the signal.
+        /// </summary>
+        /// <param name="signal">The signal.</param>
+        /// <returns></returns>
         public async Task<SignalResponse> SubmitSignal(Signal signal)
         {
             SignalResponse? signalResponse = null;

@@ -19,3 +19,4 @@ yarn-error.log
 /csharp/src/App/.vs
 __pycache__/
 .dccache
+/csharp/src/.vs/ProjectEvaluation

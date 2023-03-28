@@ -1,6 +1,9 @@
 ﻿
 namespace Signals.Library.Constants
 {
+    /// <summary>
+    /// The list of possible CVSS Metric names. This list is based off CVSS 3.1
+    /// </summary>
     public static class CVSS31MetricName
     {
         public static readonly string attackVector = "AV";
