@@ -112,7 +112,7 @@ namespace Signals.Library.Constants
     /// and referencing an entity.
     /// </summary>
     
-	[JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
+    [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
     public enum SignalType
     {
         Default,
