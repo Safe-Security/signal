@@ -64,7 +64,7 @@ namespace Signals.Library.Models
 
         /// <value>Property <c>Type</c> The type of signal.</value>
         [JsonProperty("type")]
-        [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
+        
         public SignalType? Type { get; set; }
 
         /// <value>Property <c>Name</c> Indicates the name of the signal.It is different from the @id field as @id represents an instance of this name.</value>

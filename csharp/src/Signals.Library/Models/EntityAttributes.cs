@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using Signals.Library.Constants;
 
 namespace Signals.Library.Models
@@ -33,7 +32,6 @@ namespace Signals.Library.Models
         ///The criticality of the asset from the business perspective.
         /// </value>
         [JsonProperty("criticality")]
-        [JsonConverter(typeof(StringEnumConverter))]
         public SeverityLevel? Criticality { get; set; }
 
         /// <value>Property <c>ConfidentialityRequirement</c> The CVSS score from 0-10.
@@ -42,7 +40,6 @@ namespace Signals.Library.Models
         /// This field captures the confidentiality requirement of the entity for which the signal is referring to.
         /// </value>
         [JsonProperty("confidentialityRequirement")]
-        [JsonConverter(typeof(StringEnumConverter))]
         public SeverityLevel? ConfidentialityRequirement { get; set; }
 
         /// <value>Property <c>IntegrityRequirement</c> The CVSS score from 0-10.
@@ -50,7 +47,6 @@ namespace Signals.Library.Models
         /// This field captures the integrity requirement of the entity for which the signal is referring to
         /// </value>
         [JsonProperty("integrityRequirement")]
-        [JsonConverter(typeof(StringEnumConverter))]
         public SeverityLevel? IntegrityRequirement { get; set; }
 
         /// <value>Property <c>AvailabilityRequirement</c> The CVSS score from 0-10.
@@ -58,7 +54,6 @@ namespace Signals.Library.Models
         /// This field captures the integrity requirement of the entity for which the signal is referring to.
         /// </value>
         [JsonProperty("availabilityRequirement")]
-        [JsonConverter(typeof(StringEnumConverter))]
         public SeverityLevel? AvailabilityRequirement { get; set; }
 
         /// <value>Property <c>Tags</c> A place holder to add name value pairs as tags/labels.</value>

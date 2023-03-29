@@ -18,14 +18,12 @@ namespace Signals.Library.Models
         /// The compliance status.
         /// </value>
         [JsonProperty("complianceStatus")]
-        [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
         public ComplianceStatus? ComplianceStatus { get; set; }
 
         /// <value>
         /// The workflow status.
         /// </value>
         [JsonProperty("workflowStatus")]
-        [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
         public WorkFlowStatus? WorkflowStatus { get; set; }
     }
 }
