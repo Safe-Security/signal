@@ -29,9 +29,9 @@ See the folder [examples/samples](/examples/samples/)
 # Signal Specification
 - NodeJS Developer: See the typescript interface for signal at [nodejs/src/interfaces/signal.ts](nodejs/src/interfaces/signal.ts). See [nodejs/README.md](nodejs/README.md) on steps for generating the specification docs. You will need a nodejs environment to generate the docs.
 
-- C# .NET Developer: 
+- C# .NET Developer: See the C# POCOs for signal at [csharp/src/Signals.Library/Models/Signal.cs](csharp/src/Signals.Library/Models/Signal.cs). See [csharp/README.md](csharp/README.md) to get started using signals in C#.
 
-- Python Developer: 
+- Python Developer: See the Python structure for signal at [python/app/dataclass/signal.py](python/app/dataclass/signal.py). See [python/README.md](python/README.md) to get started using signals in Python.
 
 - Java Developer: 
 
