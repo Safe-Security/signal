@@ -85,6 +85,7 @@ namespace Signals.Library.Constants
     /// 
     ///  A user which is not necessarily a human user. This is typically characterized by an email id or a system user id.
     /// </summary>
+    
     [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
     public enum EntityType
     {
@@ -93,11 +94,11 @@ namespace Signals.Library.Constants
         Identity,
         Organization
     }
+
     /// <summary>
     /// 
     /// The signal specification allows submitting a complete signal(with entity and security context) which
     /// is the default use case.
-
     /// For the use case of daily assessments, there are information which are duplicate. Signal specification
     /// allows the flexibility to the signal submitter to choose to post asset details alone which can later be
     /// used as a reference in full signal submission.
@@ -109,7 +110,7 @@ namespace Signals.Library.Constants
     ///
     /// A signal of type = entityOnly is a resource with an unique id. A signal of type = securityContext is a Finding with a unique id
     /// and referencing an entity.
-	/// </summary>
+    /// </summary>
     
 	[JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
     public enum SignalType
