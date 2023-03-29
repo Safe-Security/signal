@@ -30,6 +30,7 @@ namespace Signals.Library.Constants
     /// 
     ///  The signal Db has the provision to auto-determine this value for well known CSPs.
     /// </summary>
+
     [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
     public enum ControlType
     {
@@ -57,6 +58,7 @@ namespace Signals.Library.Constants
     ///  makes data-lake queries and reports hard to understand. Numeric values are useful for machines and highly
     ///  responsive applications.
     /// </summary>
+
     [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
     public enum SecurityType
     {
@@ -107,9 +109,9 @@ namespace Signals.Library.Constants
     ///
     /// A signal of type = entityOnly is a resource with an unique id. A signal of type = securityContext is a Finding with a unique id
     /// and referencing an entity.
-
-    /// </summary>
-    [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
+	/// </summary>
+    
+	[JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
     public enum SignalType
     {
         Default,

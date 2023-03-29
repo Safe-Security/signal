@@ -1,9 +1,9 @@
 import requests
 
+from config import Config
 from utils.auth import get_basic_auth_header
 from utils.common import mergeDict
-from utils.constants import BASE_URL, BASIC_AUTH_API
-
+from utils.constants import BASIC_AUTH_API
 
 class Communication:
 
@@ -13,7 +13,7 @@ class Communication:
     def get_auth_token(self):
         # can be improved with using access token expiry
         if self.access_token is None:
-            url = BASE_URL+BASIC_AUTH_API
+            url = Config.base_url+BASIC_AUTH_API
             headers = {
                 "Authorization": get_basic_auth_header()
             }
@@ -52,7 +52,7 @@ class Communication:
         )
         response_status_code = res.status_code
         print(
-            "GET response Status Code {response_status_code}".format(
+            "POST response Status Code {response_status_code}".format(
                 response_status_code=response_status_code
             )
         )
