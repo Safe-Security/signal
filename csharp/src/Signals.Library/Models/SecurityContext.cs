@@ -26,7 +26,6 @@ namespace Signals.Library.Models
         ///  So, the type of the event is a mandatory security context.
         /// </value>
         [JsonProperty("type")]
-        [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
         public SecurityType Type { get; set; }
 
         /// <value>        
@@ -139,7 +138,6 @@ namespace Signals.Library.Models
         /// Description of the security details of this signal.
         /// </value>
         [JsonProperty("controlType")]
-        [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
         public ControlType? ControlType { get; set; }
 
       

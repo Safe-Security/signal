@@ -7,6 +7,7 @@ namespace Signals.Library.Constants
     /// <summary>
     /// A coarse severity level for signal.
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
     public enum SeverityLevel
     {
         Critical,
@@ -29,6 +30,8 @@ namespace Signals.Library.Constants
     /// 
     ///  The signal Db has the provision to auto-determine this value for well known CSPs.
     /// </summary>
+
+    [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
     public enum ControlType
     {
         /// <summary>
@@ -55,6 +58,8 @@ namespace Signals.Library.Constants
     ///  makes data-lake queries and reports hard to understand. Numeric values are useful for machines and highly
     ///  responsive applications.
     /// </summary>
+
+    [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
     public enum SecurityType
     {
         Finding,
@@ -80,6 +85,8 @@ namespace Signals.Library.Constants
     /// 
     ///  A user which is not necessarily a human user. This is typically characterized by an email id or a system user id.
     /// </summary>
+    
+    [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
     public enum EntityType
     {
         Machine,
@@ -87,11 +94,11 @@ namespace Signals.Library.Constants
         Identity,
         Organization
     }
+
     /// <summary>
     /// 
     /// The signal specification allows submitting a complete signal(with entity and security context) which
     /// is the default use case.
-    
     /// For the use case of daily assessments, there are information which are duplicate. Signal specification
     /// allows the flexibility to the signal submitter to choose to post asset details alone which can later be
     /// used as a reference in full signal submission.
@@ -103,8 +110,9 @@ namespace Signals.Library.Constants
     ///
     /// A signal of type = entityOnly is a resource with an unique id. A signal of type = securityContext is a Finding with a unique id
     /// and referencing an entity.
-    
     /// </summary>
+    
+    [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
     public enum SignalType
     {
         Default,
@@ -127,7 +135,7 @@ namespace Signals.Library.Constants
     /// <summary>
     /// Status applicable to compliance signals.
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
+    [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
     public enum ComplianceStatus
     {
         Pass,
@@ -137,7 +145,7 @@ namespace Signals.Library.Constants
     /// <summary>
     /// Status applicable to capture workflow state from the source of signal.
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
+    [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
     public enum WorkFlowStatus
     {
         New,

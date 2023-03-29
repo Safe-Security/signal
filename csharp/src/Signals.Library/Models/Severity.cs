@@ -53,7 +53,6 @@ namespace Signals.Library.Models
         /// A CVSS rating of 9.5 is considered to have a Severity Level = High
         /// </example>
         [JsonProperty("level")]
-        [JsonConverter(typeof(StringEnumConverter))]
         public SeverityLevel? Level { get; set; }
 
         /// <value>

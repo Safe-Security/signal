@@ -1,6 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
 using Signals.Library.Constants;
 
 namespace Signals.Library.Models
@@ -12,7 +10,6 @@ namespace Signals.Library.Models
     {
         /// <value>Property <c>Type</c> The type of the entity the signal applies to. See {EntityType} </value>
         [JsonProperty("type")]
-        [JsonConverter(typeof(StringEnumConverter), typeof(CamelCaseNamingStrategy))]
         public EntityType Type { get; set; }
 
         /// <value>Property <c>Name</c> The name of the entity. Typically this should be a fully qualified name.</value>

@@ -16,8 +16,7 @@
           "name": "Ip",
           "ipv4": "10.0.6.173"
         }
-      ],
-      "type": "Windows Server 2019 Datacenter 64 bit Edition Version 1809 Build 17763"
+      ]
     }
   },
   "securityContexts": [
@@ -32,7 +31,6 @@
       },
       "severity": {
         "type": "custom",
-        "value": 7,
         "level": "medium"
       },
       "attackPattern": [
@@ -47,7 +45,7 @@
       ],
       "tags": {
         "detectionId": [
-          "999e1e2a-effc-4317-b7b3-31e184d15481"
+          "999e1e2a-effc-4317-b7b3-31e184d15491"
         ],
         "detectionTime": [
           "2023-03-08T11:42:28Z"
