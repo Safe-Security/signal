@@ -7,6 +7,7 @@ This tutorial will show you how to:
 1. Run sample application that generates signals and submits to SAFE.
 2. Check the results in SAFE.
 3. Create your own signal.
+4. Create a zip file for multiple signals and submit it to SAFE
 
 **Pre-Requisites**
 
@@ -42,3 +43,35 @@ See [Signal](https://github.com/Safe-Security/signal/blob/main/csharp/src/Signal
 1. Create instance of signal as per specification.
 2. Call library method `SubmitSignal()` using the signal created in step 1.
 
+**Create a zip file for multiple signals and submit it to SAFE**
+
+In a real world scenario to get an overall risk posture of an asset, it must have multiple security controls attached to it. To submit this information to SAFE API have to be called multiple times, to prevent this SAFE also have the ability to accept all the signals for an entity/asset in one go by just creating a zip file comprising of collection of signals that are applicable to that asset.
+Please follow the below steps:-
+
+1. Create different signals as per [signal]((https://github.com/Safe-Security/signal/blob/main/csharp/src/Signals.Library/Models/Signal.cs)) specification applicable to an asset and save them as individual .`json` files.
+
+2. Create a directory and copy all the signal `json's` into it.
+
+3. Create `config.json` in the same directory with following code snippet
+
+   ```json
+   {
+   	"assetMatchingCriteria": [
+   		"fqdn",
+   		"assetName",
+   		"ipAddress"
+   	],
+   	"shouldImportAssets": true
+   }
+   ```
+
+   
+
+Here asset matching criteria will be used to match existing asset in SAFE based on the priority `fqdn,assetName,ipAddress`.
+
+ `shouldImportAssets` will inform SAFE whether to import this asset on SAFE portal.
+
+4. Click on save.
+5. Now create a zip file that consist of all the files in the directory including config.json. Make sure no subfolders are present inside zip.
+6. Now using the instance of communication class call SubmitSignalZip() with filepath as argument to this method.
+7. Zip should be posted successfully to the API.
