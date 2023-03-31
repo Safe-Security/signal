@@ -133,9 +133,34 @@ namespace Signals.Library.Communication
             return signalResponse;
         }
 
-        public Task SubmitSignalZip(string zipFilePath)
+        public async Task<SignalResponse> SubmitSignalZip(string zipFilePath)
         {
-            throw new NotImplementedException();
+            SignalResponse? signalResponse = null;
+            try
+            {
+                var stream = File.OpenRead(zipFilePath);
+
+                HttpRequestMessage signalRequest =
+                    new HttpRequestMessage(HttpMethod.Post, $"{SafeUrl}{ApiEndpoints.ZipSignals}");
+                signalRequest.Headers.Add("Authorization", $"Bearer {await GetAccessToken()}");
+                var content = new MultipartFormDataContent();
+                content.Add(new StreamContent(stream),"file",zipFilePath);
+                signalRequest.Content = content;
+
+                var response = await Client.SendAsync(signalRequest);
+
+                response.EnsureSuccessStatusCode();
+
+                var rawResponse = await response.Content.ReadAsStringAsync();
+                signalResponse = JsonConvert.DeserializeObject<SignalResponse>(rawResponse);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error occurred-{ex.Message}");
+                throw;
+            }
+            return signalResponse;
+
         }
     }
 }
