@@ -34,23 +34,17 @@ namespace App
                 {
                     try
                     {
-                        JObject rawSignal = JObject.Parse(await File.ReadAllTextAsync(file));
-                        Signal signal = rawSignal.ToObject<Signal>();
-
-                        SignalResponse resp = await Communication.SubmitSignal(signal);
-                        if (bool.Parse(resp.Success))
+                        if (file.EndsWith(".zip"))
                         {
-                            Console.WriteLine($"Signal-{signal.Name} submitted successfully");
+                            await SubmitZipSignals(file);
                         }
-                        else
+                        else if(file.EndsWith(".json"))
                         {
-                            Console.WriteLine($"Failed to submit signal-{signal.Name} due to {resp.Message}");
+                            await SubmitSignal(file);
                         }
-
                     }
                     catch (Exception ex)
                     {
-
                         Console.WriteLine($"Error-{ex.Message}");
                     }
 
@@ -65,6 +59,36 @@ namespace App
 
         }
 
+        private async Task SubmitSignal(string file)
+        {
+            JObject rawSignal = JObject.Parse(await File.ReadAllTextAsync(file));
+            Signal signal = rawSignal.ToObject<Signal>();
+
+            SignalResponse resp = await Communication.SubmitSignal(signal);
+            if (bool.Parse(resp.Success))
+            {
+                Console.WriteLine($"Signal-{signal.Name} submitted successfully");
+            }
+            else
+            {
+                Console.WriteLine($"Failed to submit signal-{signal.Name} due to {resp.Message}");
+            }
+        }
+
+
+        private async Task SubmitZipSignals(string file)
+        {
+            SignalResponse resp = await Communication.SubmitSignalZip(file);
+            if (bool.Parse(resp.Success))
+            {
+                Console.WriteLine($"Zip Signal-{file} submitted successfully");
+            }
+            else
+            {
+                Console.WriteLine($"Failed to submit Zip signal-{file} due to {resp.Message}");
+            }
+        }
+        
         private static string GetDefaultSampleExamplesPath()
         {
             int index = (Environment.CurrentDirectory).IndexOf("csharp", StringComparison.Ordinal);

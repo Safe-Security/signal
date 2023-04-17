@@ -7,6 +7,7 @@ This tutorial will show you how to:
 1. Run sample application that generates signals and submits to SAFE.
 2. Check the results in SAFE.
 3. Create your own signal.
+4. Create a zip file for multiple signals and submit it to SAFE (Optional, use in case of bulk signals submission)
 
 **Pre-Requisites**
 
@@ -42,3 +43,38 @@ See [Signal](https://github.com/Safe-Security/signal/blob/main/csharp/src/Signal
 1. Create instance of signal as per specification.
 2. Call library method `SubmitSignal()` using the signal created in step 1.
 
+**Create a zip file for multiple signals and submit it to SAFE**
+
+In a real world scenario to get an overall risk posture of an asset, it must have multiple security controls attached to it. Safe also supports bulk signal submission. Bulk submission can be used in case of submitting all signals related to single entity in bulk. 
+To use this feature please follow the below steps:-.
+
+
+1. Create different signals as per [signal]((https://github.com/Safe-Security/signal/blob/main/csharp/src/Signals.Library/Models/Signal.cs)) specification applicable to an asset and save them as individual .`json` files.
+
+2. Create `config.json` with following code snippet
+
+   ```json
+   {
+     "assetMatchingCriteria": [
+       "fqdn",
+       "assetName",
+       "ipAddress"
+     ],
+     "shouldImportAssets": true,
+     "fullAssessmentForTypes": [
+       "va"
+     ]
+   }
+   ```
+   Only the above mentioned properties are accepted in SAFE from config.json
+
+   **Description about the properties**
+
+   - `assetMatchingCriteria`- Is used to match existing asset in SAFE based on the priority `fqdn, assetName, ipAddress`.
+   - `shouldImportAssets`- will inform SAFE whether to import this asset on SAFE portal.
+   - `fullAssessmentForTypes`-  this will upload new set of security findings for a particular type of security context for an asset and old findings if present are discarded. It accepts array of strings containing `SecurityType` as mentioned in [Enums](https://github.com/Safe-Security/signal/blob/main/csharp/src/Signals.Library/Constants/Enums.cs)
+
+3. Create a zip file consisting of files from step 1 and step 2.   
+
+4. Now using the instance of communication class call SubmitSignalZip() with filepath as argument to this method.
+5. Zip should be posted successfully to the API.

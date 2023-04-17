@@ -14,6 +14,11 @@
         /// The signals endpoint
         /// </summary>
         public readonly static string Signals = "/api/v3/signals";
+        
+        /// <summary>
+        /// The zip signals
+        /// </summary>
+        public readonly static string ZipSignals = "/api/v3/signals/zip";
 
     }
 }

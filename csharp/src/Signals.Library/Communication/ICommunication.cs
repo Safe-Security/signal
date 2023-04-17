@@ -20,11 +20,11 @@ namespace Signals.Library.Communication
         /// <returns></returns>
         public Task<SignalResponse> SubmitSignal(Signal signal);
         /// <summary>
-        /// Submits the signal zip.
+        /// Submits multiple signals in zip.
         /// </summary>
         /// <param name="zipFilePath">The zip file path.</param>
         /// <returns></returns>
-        public Task SubmitSignalZip(string zipFilePath);
+        public Task<SignalResponse> SubmitSignalZip(string zipFilePath);
 
     }
 }

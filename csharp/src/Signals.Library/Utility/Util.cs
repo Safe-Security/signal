@@ -21,20 +21,24 @@ namespace Signals.Library.Utility
         /// </exception>
         public static List<string> GetAllFilesFromDirectory(string directoryPath)
         {
-            List<string> files = new List<string>();
+
             if (Directory.Exists(directoryPath))
             {
-                files = Directory.GetFiles(directoryPath, @"*.json", SearchOption.TopDirectoryOnly).ToList();
+                List<string> files = new List<string>();
+                string[] supportedFileExtensions = { "*.json", "*.zip" };
+                foreach (var fileExt in supportedFileExtensions)
+                {
+                    files.AddRange(Directory.GetFiles(directoryPath, fileExt, SearchOption.TopDirectoryOnly).ToList());
+                }
+                if (files.Count == 0)
+                {
+                    throw new Exception($"Directory {directoryPath} is empty, please place some sample signals in it");
+                }
+                return files;
             }
-            else
-            {
-                throw new Exception($"Directory {directoryPath} doesn't exist please check path");
-            }
-            if (files.Count == 0)
-            {
-                throw new Exception($"Directory {directoryPath} is empty, please place some sample signals in it");
-            }
-            return files;
+
+            throw new Exception($"Directory {directoryPath} doesn't exist please check path");
+
         }
 
         /// <summary>
