@@ -7,7 +7,7 @@ This tutorial will show you how to:
 1. Run sample application that generates signals and submits to SAFE.
 2. Check the results in SAFE.
 3. Create your own signal.
-4. Create a zip file for multiple signals and submit it to SAFE
+4. Create a zip file for multiple signals and submit it to SAFE (Optional, use in case of bulk signals submission)
 
 **Pre-Requisites**
 
@@ -45,33 +45,36 @@ See [Signal](https://github.com/Safe-Security/signal/blob/main/csharp/src/Signal
 
 **Create a zip file for multiple signals and submit it to SAFE**
 
-In a real world scenario to get an overall risk posture of an asset, it must have multiple security controls attached to it. To submit this information to SAFE API have to be called multiple times, to prevent this SAFE also have the ability to accept all the signals for an entity/asset in one go by just creating a zip file comprising of collection of signals that are applicable to that asset.
-Please follow the below steps:-
+In a real world scenario to get an overall risk posture of an asset, it must have multiple security controls attached to it. Safe also supports bulk signal submission. Bulk submission can be used in case of submitting all signals related to single entity in bulk. 
+To use this feature please follow the below steps:-.
+
 
 1. Create different signals as per [signal]((https://github.com/Safe-Security/signal/blob/main/csharp/src/Signals.Library/Models/Signal.cs)) specification applicable to an asset and save them as individual .`json` files.
 
-2. Create a directory and copy all the signal `json's` into it.
-
-3. Create `config.json` in the same directory with following code snippet
+2. Create `config.json` with following code snippet
 
    ```json
    {
-   	"assetMatchingCriteria": [
-   		"fqdn",
-   		"assetName",
-   		"ipAddress"
-   	],
-   	"shouldImportAssets": true
+     "assetMatchingCriteria": [
+       "fqdn",
+       "assetName",
+       "ipAddress"
+     ],
+     "shouldImportAssets": true,
+     "fullAssessmentForTypes": [
+       "va"
+     ]
    }
    ```
+   Only the above mentioned properties are accepted in SAFE from config.json
 
-   
+   **Description about the properties**
 
-Here asset matching criteria will be used to match existing asset in SAFE based on the priority `fqdn,assetName,ipAddress`.
+   - `assetMatchingCriteria`- Is used to match existing asset in SAFE based on the priority `fqdn, assetName, ipAddress`.
+   - `shouldImportAssets`- will inform SAFE whether to import this asset on SAFE portal.
+   - `fullAssessmentForTypes`-  this will upload new set of security findings for a particular type of security context for an asset and old findings if present are discarded. It accepts array of strings containing `SecurityType` as mentioned in [Enums](https://github.com/Safe-Security/signal/blob/main/csharp/src/Signals.Library/Constants/Enums.cs)
 
- `shouldImportAssets` will inform SAFE whether to import this asset on SAFE portal.
+3. Create a zip file consisting of files from step 1 and step 2.   
 
-4. Click on save.
-5. Now create a zip file that consist of all the files in the directory including config.json. Make sure no subfolders are present inside zip.
-6. Now using the instance of communication class call SubmitSignalZip() with filepath as argument to this method.
-7. Zip should be posted successfully to the API.
+4. Now using the instance of communication class call SubmitSignalZip() with filepath as argument to this method.
+5. Zip should be posted successfully to the API.
