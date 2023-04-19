@@ -801,6 +801,7 @@ export interface Status {
 export enum ComplianceStatus {
     pass = "pass",
     fail = "fail",
+    accepted = "accepted",
     unknown = "unknown"
 }
 
