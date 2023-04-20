@@ -809,6 +809,7 @@ export enum ComplianceStatus {
  */
 export enum WorkflowStatus {
     new = "new",
+    riskAccepted = "riskAccepted",
     resolved = "resolved"
 }
 
