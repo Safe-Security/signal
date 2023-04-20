@@ -801,7 +801,6 @@ export interface Status {
 export enum ComplianceStatus {
     pass = "pass",
     fail = "fail",
-    accepted = "accepted",
     unknown = "unknown"
 }
 
@@ -810,6 +809,7 @@ export enum ComplianceStatus {
  */
 export enum WorkflowStatus {
     new = "new",
+    riskAccepted = "riskAccepted",
     resolved = "resolved"
 }
 
