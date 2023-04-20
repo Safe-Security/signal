@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/Safe-Security/signal/compare/v1.6.3...v1.7.0) (2023-04-20)
+
+
+### Features
+
+* **nodejs:** add new riskAccepted WorkflowStatus ([#15](https://github.com/Safe-Security/signal/issues/15)) ([80bebc3](https://github.com/Safe-Security/signal/commit/80bebc3cf45ed43d65f1057db5566d65aba75e59))
+
 ## [1.6.3](https://github.com/Safe-Security/signal/compare/v1.6.2...v1.6.3) (2023-03-13)
 
 

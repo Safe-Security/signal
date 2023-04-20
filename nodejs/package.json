@@ -1,6 +1,6 @@
 {
   "name": "signal-safe-security",
-  "version": "1.6.3",
+  "version": "1.7.0",
   "author": "Shuva Brata Deb <shuva.d@safe.security>",
   "license": "MIT",
   "main": "lib/index.js",
