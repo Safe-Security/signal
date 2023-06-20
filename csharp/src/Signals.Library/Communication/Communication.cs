@@ -3,6 +3,7 @@ using Signals.Library.Communication.Models;
 using Signals.Library.Constants;
 using Signals.Library.Models;
 using Signals.Library.Utility;
+using System.Net.Http.Headers;
 using System.Security;
 using System.Text;
 
@@ -144,7 +145,9 @@ namespace Signals.Library.Communication
                     new HttpRequestMessage(HttpMethod.Post, $"{SafeUrl}{ApiEndpoints.ZipSignals}");
                 signalRequest.Headers.Add("Authorization", $"Bearer {await GetAccessToken()}");
                 var content = new MultipartFormDataContent();
-                content.Add(new StreamContent(stream),"file",zipFilePath);
+                StreamContent zipContent = new StreamContent(stream);
+                zipContent.Headers.ContentType = new MediaTypeHeaderValue("application/zip");
+                content.Add(zipContent, "file", zipFilePath);
                 signalRequest.Content = content;
 
                 var response = await Client.SendAsync(signalRequest);
