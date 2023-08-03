@@ -39,13 +39,13 @@ def submitSampleSignals():
         with open(signalZipFile, 'rb') as signalZipFile:
             try:
                 client = Communication()
-                files = {'file': (signalZip, signalFile)}
+                files = {'file': (signalZip, signalZipFile, 'application/zip')}
                 response = client.post(Config.base_url+POST_SIGNALS_ZIP_API, files=files)
                 print(response.text)
             except Exception as err:
                 print(
-                    "Error while submitting signal zip {signalZip.name}. Error: {err}".format(
-                        signalFile=signalFile, err=err
+                    "Error while submitting signal zip {signalZipFile.name}. Error: {err}".format(
+                        signalZipFile=signalZipFile, err=err
                     )
                 )
     
