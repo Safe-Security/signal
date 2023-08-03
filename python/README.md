@@ -17,7 +17,7 @@ This tutorial will show you how to:
 **How to run sample application**
 
 1. Check out the [signals repository](https://github.com/Safe-Security/signal) to your machine from Github.
-2. Navigate to `signals\python` folder.
+2. Navigate to `signal/python` folder.
 3. Fill following properties in the [config file](config.ini)
    1. **SafeUrl-**(*Required*) Base Url of the Safe Server.
    2. **ApiUsername and ApiPassword** *(Required)*- REST api credentials to access SAFE API's.
