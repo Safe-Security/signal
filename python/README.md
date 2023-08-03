@@ -36,3 +36,26 @@ See [Signal](app/dataclass/signal.py) specification
 
 1. Follow [Signal](app/dataclass/signal.py) specification to add new signal jsons in the [directory](../examples/samples).
 2. Run `python3 app/main.py` to submit the signals to Safe.
+3. Safe supports signals zip upload. Zip file can contain signal jsons and a config file named `config.json`.
+4. Create `config.json` with following settings - 
+
+   ```json
+   {
+     "assetMatchingCriteria": [
+       "fqdn",
+       "assetName",
+       "ipAddress"
+     ],
+     "shouldImportAssets": true,
+     "fullAssessmentForTypes": [
+       "va"
+     ]
+   }
+   ```
+   Only the above mentioned properties are accepted in SAFE from config.json
+
+   **Description about the properties**
+
+   - `assetMatchingCriteria`- Is used to match existing asset in SAFE based on the priority `fqdn, assetName, ipAddress`.
+   - `shouldImportAssets`- will inform SAFE whether to import this asset on SAFE portal.
+   - `fullAssessmentForTypes`-  this will upload new set of security findings for a particular type of security context for an asset and old findings if present are discarded. It accepts array of strings containing `SecurityType` as mentioned in [Enums](https://github.com/Safe-Security/signal/blob/main/csharp/src/Signals.Library/Constants/Enums.cs)
