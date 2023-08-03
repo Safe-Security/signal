@@ -44,7 +44,7 @@ def submitSampleSignals():
                 print(response.text)
             except Exception as err:
                 print(
-                    "Error while submitting signal json {signalFile.name}. Error: {err}".format(
+                    "Error while submitting signal zip {signalZip.name}. Error: {err}".format(
                         signalFile=signalFile, err=err
                     )
                 )
