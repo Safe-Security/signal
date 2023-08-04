@@ -4,7 +4,7 @@ from communication import Communication
 from config import Config
 from dataclass.signal import Signal
 
-from utils.constants import POST_SIGNALS_API
+from utils.constants import POST_SIGNALS_API, POST_SIGNALS_ZIP_API
 
 """
 Reads sample signal jsons and submit it to Safe
@@ -15,9 +15,9 @@ def submitSampleSignals():
     if not isExist:
         print("Signals sample directory doesnot exists. Exiting.")
         return
-    signal_json_files = [signal_json for signal_json in os.listdir(signalSampleDir) if signal_json.endswith('.json')]
-    for signal_json in signal_json_files:
-        signalFile = signalSampleDir+signal_json
+    signalJsonFiles = [signalJson for signalJson in os.listdir(signalSampleDir) if signalJson.endswith('.json')]
+    for signalJson in signalJsonFiles:
+        signalFile = signalSampleDir+signalJson
         with open(signalFile, 'rb') as signalFile:
             try:
                 signalData = signalFile.read()
@@ -33,3 +33,19 @@ def submitSampleSignals():
                     )
                 )
 
+    signalZipFiles = [signalZip for signalZip in os.listdir(signalSampleDir) if signalZip.endswith('.zip')]
+    for signalZip in signalZipFiles:
+        signalZipFile = signalSampleDir+signalZip
+        with open(signalZipFile, 'rb') as signalZipFile:
+            try:
+                client = Communication()
+                files = {'file': (signalZip, signalZipFile, 'application/zip')}
+                response = client.post(Config.base_url+POST_SIGNALS_ZIP_API, files=files)
+                print(response.text)
+            except Exception as err:
+                print(
+                    "Error while submitting signal zip {signalZipFile.name}. Error: {err}".format(
+                        signalZipFile=signalZipFile, err=err
+                    )
+                )
+    

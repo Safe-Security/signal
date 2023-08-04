@@ -39,7 +39,7 @@ class Communication:
         return res
 
 
-    def post(self, url, body=None, extra_headers=None):
+    def post(self, url, body=None, extra_headers=None, files=None):
         headers = {"Authorization": "Bearer {token}".format(token=Communication.get_auth_token(self))}
         if extra_headers:
             headers = mergeDict(extra_headers, headers)
@@ -48,6 +48,7 @@ class Communication:
             url,
             data=body,
             headers=headers,
+            files=files,
             timeout=60,
         )
         response_status_code = res.status_code
