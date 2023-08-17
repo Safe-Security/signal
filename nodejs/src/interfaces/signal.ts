@@ -1004,6 +1004,11 @@ export interface SecurityContext{
         reference?: string | SignalUrl;
 
         /**
+         * We will be deprecating 'reference' and use 'references' to support multiple reference links in future
+         */
+        references?: (string | SignalUrl)[];
+
+        /**
          * Describes the impact of remediation
          */
         impact?: string | SignalUrl;

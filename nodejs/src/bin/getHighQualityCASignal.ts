@@ -76,7 +76,7 @@ export const getHighQualityCASignal = ():Signal => {
       },
       remediation: {
         description: "Describe how to remediate",
-        reference: "https://technet.microsoft.com/en-us/library/bb490626.aspx",
+        references: ["https://technet.microsoft.com/en-us/library/bb490626.aspx"],
         impact: "Describe the impact of remediation"
       },
       tags:{
