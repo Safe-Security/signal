@@ -44,8 +44,8 @@ const poorSignal: Signal = {
     remediation: {
       description:
         "1. Login to the Azure portal, go to \"External accounts with owner permissions should be removed from your subscription\" recommendation in the Security Center.<br>2. Click a subscription from the list of subscriptions below or click 'Take action' if you are coming from a specific subscription.<br>3. The list of external user accounts that require access removal opens.<br>4. Click 'Continue'. The Access control (IAM) page opens.<br>5. In the Access control page:<br>    a. Click the 'Role assignments'<br>    b. Search and select the users that were in the list of user accounts that require removal. You can scroll back to the left to see the list.<br>    c. Click 'Remove'.",
-      references:
-        ["https://techcommunity.microsoft.com/t5/azure-security-center/security-controls-in-azure-security-center-manage-access-and/ba-p/1720540"],
+      reference:
+        "https://techcommunity.microsoft.com/t5/azure-security-center/security-controls-in-azure-security-center-manage-access-and/ba-p/1720540",
       impact:
         "If any of the external account is being used by subscriptions, then removing it will revoke its permissions. So, if there is a business requirement to allow an external account to use subscriptions then we should not remove it.",
     },
@@ -107,8 +107,8 @@ const averageSignal: Signal = {
     remediation: {
       description:
         "1. Login to the Azure portal, go to \"External accounts with owner permissions should be removed from your subscription\" recommendation in the Security Center.<br>2. Click a subscription from the list of subscriptions below or click 'Take action' if you are coming from a specific subscription.<br>3. The list of external user accounts that require access removal opens.<br>4. Click 'Continue'. The Access control (IAM) page opens.<br>5. In the Access control page:<br>    a. Click the 'Role assignments'<br>    b. Search and select the users that were in the list of user accounts that require removal. You can scroll back to the left to see the list.<br>    c. Click 'Remove'.",
-      references:
-       [ "https://techcommunity.microsoft.com/t5/azure-security-center/security-controls-in-azure-security-center-manage-access-and/ba-p/1720540"],
+      reference:
+        "https://techcommunity.microsoft.com/t5/azure-security-center/security-controls-in-azure-security-center-manage-access-and/ba-p/1720540",
       impact:
         "If any of the external account is being used by subscriptions, then removing it will revoke its permissions. So, if there is a business requirement to allow an external account to use subscriptions then we should not remove it.",
     },
@@ -170,8 +170,8 @@ const goodSignal: Signal = {
     remediation: {
       description:
         "1. Login to the Azure portal, go to \"External accounts with owner permissions should be removed from your subscription\" recommendation in the Security Center.<br>2. Click a subscription from the list of subscriptions below or click 'Take action' if you are coming from a specific subscription.<br>3. The list of external user accounts that require access removal opens.<br>4. Click 'Continue'. The Access control (IAM) page opens.<br>5. In the Access control page:<br>    a. Click the 'Role assignments'<br>    b. Search and select the users that were in the list of user accounts that require removal. You can scroll back to the left to see the list.<br>    c. Click 'Remove'.",
-      references:
-       [ "https://techcommunity.microsoft.com/t5/azure-security-center/security-controls-in-azure-security-center-manage-access-and/ba-p/1720540"],
+      reference:
+        "https://techcommunity.microsoft.com/t5/azure-security-center/security-controls-in-azure-security-center-manage-access-and/ba-p/1720540",
       impact:
         "If any of the external account is being used by subscriptions, then removing it will revoke its permissions. So, if there is a business requirement to allow an external account to use subscriptions then we should not remove it.",
     },

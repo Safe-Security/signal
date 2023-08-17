@@ -81,7 +81,7 @@ export const getHighQualityVASignal = (): Signal => {
       },
       remediation: {
         description: "Describe how to remediate",
-        references: ["http://packetstormsecurity.com/files/167872/rpc.py-0.6.0-Remote-Code-Execution.html"],
+        reference: "http://packetstormsecurity.com/files/167872/rpc.py-0.6.0-Remote-Code-Execution.html",
         impact: "Describe the impact of remediation"
       },
       tags:{
