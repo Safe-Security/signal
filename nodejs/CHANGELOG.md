@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/Safe-Security/signal/compare/v1.7.0...v1.8.0) (2023-08-18)
+
+
+### Features
+
+* **nodejs:** Supporting multiple reference links for a control ([#20](https://github.com/Safe-Security/signal/issues/20)) ([4c473ce](https://github.com/Safe-Security/signal/commit/4c473cef5841b07fe9181c9b74c3897b48c6bcbb))
+
 # [1.7.0](https://github.com/Safe-Security/signal/compare/v1.6.3...v1.7.0) (2023-04-20)
 
 
