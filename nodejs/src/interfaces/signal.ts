@@ -563,6 +563,7 @@ export enum SeverityLevel {
  */
 export enum SecurityType {
     finding = "finding",
+    outsideIn = "outsideIn",
     ca = "ca",
     va = "va",
     edr = "edr",
