@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/Safe-Security/signal/compare/v1.8.0...v1.9.0) (2023-11-13)
+
+
+### Features
+
+* **nodejs:** Support outside in as control type ([#21](https://github.com/Safe-Security/signal/issues/21)) ([089c14f](https://github.com/Safe-Security/signal/commit/089c14fc4f0cb77ee687ecc0c846a00f701e6555))
+
 # [1.8.0](https://github.com/Safe-Security/signal/compare/v1.7.0...v1.8.0) (2023-08-18)
 
 
