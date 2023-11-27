@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/Safe-Security/signal/compare/v1.9.0...v1.10.0) (2023-11-27)
+
+
+### Features
+
+* **nodejs:** added support for FAIR CAM Controls in Signal ([#22](https://github.com/Safe-Security/signal/issues/22)) ([047b7fc](https://github.com/Safe-Security/signal/commit/047b7fc53036adceb9d245236ccc5076e535b93e))
+
 # [1.9.0](https://github.com/Safe-Security/signal/compare/v1.8.0...v1.9.0) (2023-11-13)
 
 
