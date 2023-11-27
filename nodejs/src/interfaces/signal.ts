@@ -936,7 +936,9 @@ export interface SecurityContext{
     attackPattern?: AttackPattern[];
 
     /**
-     * A list of relevant cam controls this signal contributes to.
+     * Optional field that can be provided along with the signal to specify which FAIR CAM control does this signal map to.
+     * When not provided, this will be determined by SAFE where applicable.
+     * Do not populate when this data if not available.
      */
     camControls?: string[];
 
