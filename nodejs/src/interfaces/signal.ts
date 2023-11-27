@@ -936,6 +936,11 @@ export interface SecurityContext{
     attackPattern?: AttackPattern[];
 
     /**
+     * A list of relevant cam controls this signal contributes to.
+     */
+    camControls?: string[];
+
+    /**
      * See {@link killChainPhases}
      */
     campaign?: Campaign[];
