@@ -359,6 +359,20 @@ export interface StandardMapping {
     properties?: { [key: string]: string };
 }
 
+/**
+ * When a signal maps to a FAIR CAM control like VMD, SCA, etc, the mapping can be provided.
+ * Example: a Signal that maps to Vulnerability Management Detection and Response FAIR CAM control can have 
+ * ```
+ * "id": "VMD"
+ * "properties" : {
+ *  "isRelevant": 0 
+ * }
+ */
+export interface CamControl {
+    id: string;
+    properties?: { [key: string]: string | number | boolean };
+}
+
 // eslint-disable-next-line no-secrets/no-secrets
 /**
  * A geographical location. Use [ISO-3166 Alpha-2](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) codes
@@ -940,7 +954,7 @@ export interface SecurityContext{
      * When not provided, this will be determined by SAFE where applicable.
      * Do not populate when this data if not available.
      */
-    camControls?: { [key: string]: string | boolean }[];
+    camControls?: CamControl[];
 
     /**
      * See {@link killChainPhases}
