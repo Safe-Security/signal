@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/Safe-Security/signal/compare/v1.10.0...v1.11.0) (2023-12-02)
+
+
+### Features
+
+* **nodejs:** updated camControls interface ([#23](https://github.com/Safe-Security/signal/issues/23)) ([0da4a10](https://github.com/Safe-Security/signal/commit/0da4a10776bc5a02c273dd296ade4972fca2dbe9))
+
 # [1.10.0](https://github.com/Safe-Security/signal/compare/v1.9.0...v1.10.0) (2023-11-27)
 
 
