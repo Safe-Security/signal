@@ -940,7 +940,7 @@ export interface SecurityContext{
      * When not provided, this will be determined by SAFE where applicable.
      * Do not populate when this data if not available.
      */
-    camControls?: string[];
+    camControls?: { [key: string]: string | boolean }[];
 
     /**
      * See {@link killChainPhases}
