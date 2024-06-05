@@ -957,6 +957,11 @@ export interface SecurityContext{
     camControls?: CamControl[];
 
     /**
+     * Optional field that can be provided along with the signal to specify wether the finding is high impact finding or not.
+     * When not provided, the default value for the isHIF flag will be false.
+     */
+    isHIF?: boolean;
+    /**
      * See {@link killChainPhases}
      */
     campaign?: Campaign[];
