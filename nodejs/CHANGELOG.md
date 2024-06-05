@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/Safe-Security/signal/compare/v1.11.0...v1.12.0) (2024-06-05)
+
+
+### Features
+
+* **nodejs:** updated isHIF in signal interface ([#24](https://github.com/Safe-Security/signal/issues/24)) ([564c0d5](https://github.com/Safe-Security/signal/commit/564c0d5908c3406452d775b56839a9794bc68214))
+
 # [1.11.0](https://github.com/Safe-Security/signal/compare/v1.10.0...v1.11.0) (2023-12-02)
 
 
