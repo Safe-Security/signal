@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/Safe-Security/signal/compare/v1.12.0...v1.13.0) (2024-06-12)
+
+
+### Features
+
+* **nodejs:** updated oldestCvePublishedDate in signal interface ([#28](https://github.com/Safe-Security/signal/issues/28)) ([1e99570](https://github.com/Safe-Security/signal/commit/1e9957056c7e66b5ddbe0c097f79e9219f703c52))
+
 # [1.12.0](https://github.com/Safe-Security/signal/compare/v1.11.0...v1.12.0) (2024-06-05)
 
 
