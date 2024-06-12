@@ -962,6 +962,12 @@ export interface SecurityContext{
      */
     isHIF?: boolean;
     /**
+     * Optional field that can be provided along with the signal to specify the oldest published date from the published dates
+     * of all the cves present in security context/s.
+     * When not provided, the default value for the oldestCvePublishedDate will be null.
+     */
+    oldestCvePublishedDate?: Date;
+    /**
      * See {@link killChainPhases}
      */
     campaign?: Campaign[];
