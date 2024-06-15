@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/Safe-Security/signal/compare/v1.14.0...v1.15.0) (2024-06-15)
+
+
+### Features
+
+* **nodejs:** add-open-since-field-in-signal-interface ([#30](https://github.com/Safe-Security/signal/issues/30)) ([aa3941e](https://github.com/Safe-Security/signal/commit/aa3941e4d493e5aab598f992b353f5fbade792e5))
+
 # [1.14.0](https://github.com/Safe-Security/signal/compare/v1.13.0...v1.14.0) (2024-06-12)
 
 
