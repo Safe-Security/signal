@@ -114,6 +114,11 @@ export interface Signal {
     expiresAt?: Date;
 
     /**
+     * The date when the finding was detected on an entity and it has remained opened since.
+     */
+    openSince?: Date;
+
+    /**
      * If the signal is no longer valid, mark it revoked and update the modifiedAt Date
      */
     revoked?: boolean;
