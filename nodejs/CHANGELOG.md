@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/Safe-Security/signal/compare/v1.15.0...v1.16.0) (2025-03-20)
+
+
+### Features
+
+* **nodejs:** update tags type in SecurityContext interface to allow string and boolean values ([#31](https://github.com/Safe-Security/signal/issues/31)) ([3329ed9](https://github.com/Safe-Security/signal/commit/3329ed97afacccfca1f82d56c0c62dcea9ebc7d4))
+
 # [1.15.0](https://github.com/Safe-Security/signal/compare/v1.14.0...v1.15.0) (2024-06-15)
 
 
