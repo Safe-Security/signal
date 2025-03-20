@@ -1054,5 +1054,5 @@ export interface SecurityContext{
     /**
      * A place holder to add name value pairs as tags/labels.
      */
-    tags?: { [key: string]: string[] };
+    tags?: { [key: string]: string[] | string | boolean };
 }
