@@ -602,6 +602,12 @@ export enum SecurityType {
     others = "others"
 }
 
+export enum InternetFacing {
+    Yes = "Yes",
+    No = "No",
+    Maybe = "Maybe"
+}
+
 /**
  * Points to an asset management system where more details about the entity could be found.
  *
@@ -694,14 +700,7 @@ export interface EntityAttributes {
     url?: string;
 
     /** Network interfaces attached to the entity with IP/MAC/type details. */
-    networkInterface?: {
-        name?: string;
-        hostname?: string;
-        ipv4?: string;
-        ipv6?: string;
-        macAddress?: string;
-        type?: "private" | "public" | "unknown";
-    }[];
+    networkInterface?: NetworkInterface[]
 
     /** Network domain where the device resides. Example: "work.example.com" */
     domain?: string;
@@ -745,10 +744,10 @@ export interface EntityAttributes {
     vpcId?: string;
 
     /** Physical or logical location of the entity. Example: "Mumbai Datacenter" */
-    location?: string;
+    location?: string[];
 
     /** Designation of the user/device. Example: "Senior Engineer" */
-    designation?: string;
+    designation?: string[];
 
     /** Roles assigned to the entity/user. Example: ["Google WS Admin"] */
     userRoles?: string[];
@@ -760,7 +759,7 @@ export interface EntityAttributes {
     region?: string;
 
     /** Department linked to the entity. Example: "Finance" */
-    department?: string;
+    department?: string[];
 
     /** External identifier from a source system. Example: "CMDB123" */
     externalSourceId?: string;
@@ -768,14 +767,14 @@ export interface EntityAttributes {
     /** Whether MFA is enabled on the email account linked to the entity. */
     emailMfa?: boolean;
 
-    /** Attack surface classification. Example: "internal service" */
+    /** Attack surface classification. Example: "Application, Cloud etc" */
     attackSurface?: string;
 
     /** Underlying platform. Example: "Windows", "Linux" */
     platform?: string;
 
     /** Whether the entity is internet-facing. */
-    internetFacing?: boolean;
+    internetFacing?: InternetFacing;
 
     /** Risk/posture score. Example: "85/100" */
     assetScore?: string;
@@ -805,6 +804,18 @@ export interface IpAddress {
      * An IP v6 string.
      */
     ipv6?: string;
+}
+
+/**
+ * Network interface attached to an entity with IP/MAC/type details.
+ */
+export interface NetworkInterface {
+    name?: string;
+    hostname?: string;
+    ipv4?: string;
+    ipv6?: string;
+    macAddress?: string;
+    type?: "private" | "public" | "unknown";
 }
 
 /**
@@ -1178,9 +1189,6 @@ export interface SecurityContext{
     /** Finding asset type within the entity (e.g., "container", "vm"). */
     findingAssetType?: string;
 
-    /** Workflow status for findings. */
-    workflowStatus?: "acceptedFailed" | "open";
-
     /** Port associated with the finding (e.g., 22, 443). */
     port?: number;
 
@@ -1212,9 +1220,6 @@ export interface SecurityContext{
 
     /** Freeform references (URLs, documents). */
     references?: string;
-
-    /** AI-generated remediation suggestion. */
-    aiGeneratedRemediation?: string;
 
     /** Observation notes or analyst comments. */
     observationText?: string;
@@ -1260,14 +1265,8 @@ export interface SecurityContext{
     /** Number of times detected. */
     timesDetected?: number;
 
-    /** Safe-provided custom score. */
-    score?: number;
-
     /** Vendor-provided score. */
     vendorScore?: number;
-
-    /** User-custom score. */
-    customScore?: number;
 
     // --- Threat Intel Data ---
 
