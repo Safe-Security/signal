@@ -971,6 +971,21 @@ export interface Evidence {
     path?: string;
 }
 
+/**
+ * Common Vulnerability and Exposure (CVE) information
+ */
+export interface CVE {
+    /**
+     * The CVE identifier (e.g., "CVE-2023-1234")
+     */
+    id: string;
+
+    /**
+     * The date when this CVE was published
+     */
+    publishDate?: Date;
+}
+
 export interface SecurityContext{
     /**
      * The most important aspect of a single is the type of security context. It can be any of the following types or something that the
@@ -1180,11 +1195,8 @@ export interface SecurityContext{
     /** Unique detection identifier, primarily for EDR assessments. */
     detectionId?: string;
 
-    /** List of CVE IDs associated with this finding. */
-    cveIds?: string[];
-
-    /** CVE publish date. */
-    cvePublishDate?: Date;
+    /** List of CVEs associated with this finding. */
+    cves?: CVE[];
 
     /** Finding asset type within the entity (e.g., "container", "vm"). */
     findingAssetType?: string;
