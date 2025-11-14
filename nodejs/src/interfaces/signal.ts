@@ -53,6 +53,18 @@
 export interface Signal {
     /**
      * The specification of this SAFE Signal version.
+     * 
+     * Versioning behavior:
+     * - For version 1.x.x: Additional entity attributes and metadata should be provided using the `tags` object
+     *   as key-value pairs (e.g., `tags: { "fqdn": ["host.example.com"], "internetFacing": ["Yes"] }`).
+     * 
+     * - For version 2.x.x: Enhanced fields have been promoted to top-level properties in the specification.
+     *   Use the dedicated fields instead of tags (e.g., `fqdn`, `internetFacing`, `networkInterface`, `hardware`, etc.).
+     *   The `tags` object should only be used for custom metadata that doesn't have dedicated fields.
+     * 
+     * Examples of fields promoted in 2.x.x:
+     * - Entity attributes: `fqdn`, `emailId`, `url`, `networkInterface`, `domain`, `hardware`, `internetFacing`, etc.
+     * - Security context: Enhanced CVE structure, file details with path, etc.
      */
     version: string;
 
@@ -1213,6 +1225,7 @@ export interface SecurityContext{
         hashMd5: string;
         hashSha1: string;
         hashSha256: string;
+        path: string;
     };
 
     /** Process command line (useful in malware/EDR cases). */
@@ -1273,9 +1286,6 @@ export interface SecurityContext{
 
     /** Last time this issue was assessed. */
     lastAssessed?: Date;
-
-    /** Number of times detected. */
-    timesDetected?: number;
 
     /** Vendor-provided score. */
     vendorScore?: number;
