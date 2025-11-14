@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/Safe-Security/signal/compare/v1.16.0...v1.17.0) (2025-11-14)
+
+
+### Features
+
+* enhanced signal interface for CTEM (S0-78085) ([#32](https://github.com/Safe-Security/signal/issues/32)) ([9c29be9](https://github.com/Safe-Security/signal/commit/9c29be95c93702179f98fb2b062283886b156075))
+
 # [1.16.0](https://github.com/Safe-Security/signal/compare/v1.15.0...v1.16.0) (2025-03-20)
 
 
