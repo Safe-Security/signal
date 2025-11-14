@@ -37,3 +37,24 @@ See the folder [examples/samples](/examples/samples/)
 
 # Building a connector
 See the [connector developer guide](/developer-guide.md) documentation. 
+
+# Signal Specification Versioning
+
+The SAFE Signal specification uses semantic versioning (e.g., `1.x.x`, `2.x.x`). The `version` field in each signal indicates which specification version it follows.
+
+### Version 1.x.x
+- Additional entity attributes and metadata should be provided using the `tags` object as key-value pairs
+- Example: `tags: { "fqdn": ["host.example.com"], "internetFacing": ["Yes"] }`
+
+### Version 2.x.x
+- Enhanced fields have been promoted to top-level properties in the specification
+- Use dedicated fields instead of tags (e.g., `fqdn`, `internetFacing`, `networkInterface`, `hardware`, etc.)
+- The `tags` object should only be used for custom metadata that doesn't have dedicated fields
+- Improved type safety with enums (e.g., `InternetFacing` enum instead of boolean)
+- Enhanced structures (e.g., `NetworkInterface` interface, `CVE` objects with publish dates)
+
+**Examples of fields promoted in 2.x.x:**
+- Entity attributes: `fqdn`, `emailId`, `url`, `networkInterface`, `domain`, `hardware`, `internetFacing`, `platform`, `assetType`, etc.
+- Security context: Enhanced CVE structure with publish dates, file details with path, etc.
+
+For detailed field documentation, see the TypeScript interface at [nodejs/src/interfaces/signal.ts](nodejs/src/interfaces/signal.ts). 

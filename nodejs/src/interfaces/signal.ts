@@ -53,6 +53,18 @@
 export interface Signal {
     /**
      * The specification of this SAFE Signal version.
+     * 
+     * Versioning behavior:
+     * - For version 1.x.x: Additional entity attributes and metadata should be provided using the `tags` object
+     *   as key-value pairs (e.g., `tags: { "fqdn": ["host.example.com"], "internetFacing": ["Yes"] }`).
+     * 
+     * - For version 2.x.x: Enhanced fields have been promoted to top-level properties in the specification.
+     *   Use the dedicated fields instead of tags (e.g., `fqdn`, `internetFacing`, `networkInterface`, `hardware`, etc.).
+     *   The `tags` object should only be used for custom metadata that doesn't have dedicated fields.
+     * 
+     * Examples of fields promoted in 2.x.x:
+     * - Entity attributes: `fqdn`, `emailId`, `url`, `networkInterface`, `domain`, `hardware`, `internetFacing`, etc.
+     * - Security context: Enhanced CVE structure, file details with path, etc.
      */
     version: string;
 
@@ -295,6 +307,12 @@ export interface SignalSource {
      * A unique name identifying the submitter.
      */
     name: string;
+
+    /**
+     * Identifier of the connector/integration which submitted the signal. In case
+     * of custom signals this would be null.
+     */
+    integrationId?: number;
 
     /**
      * If the submitter guarantees that it will re-submit a new state of the finding again,
@@ -596,6 +614,12 @@ export enum SecurityType {
     others = "others"
 }
 
+export enum InternetFacing {
+    Yes = "Yes",
+    No = "No",
+    Maybe = "Maybe"
+}
+
 /**
  * Points to an asset management system where more details about the entity could be found.
  *
@@ -676,6 +700,102 @@ export interface EntityAttributes {
      * A place holder to add name value pairs as tags/labels.
      */
     tags?: { [key: string]: string[] };
+
+
+    /** Fully Qualified Domain Name (FQDN). Example: "host123.corp.example.com" */
+    fqdn?: string;
+
+    /** Primary email identifier associated with the entity. Example: "alice@example.com" */
+    emailId?: string;
+
+    /** Relevant URL tied to the entity. Example: "https://service.example.com" */
+    url?: string;
+
+    /** Network interfaces attached to the entity with IP/MAC/type details. */
+    networkInterface?: NetworkInterface[]
+
+    /** Network domain where the device resides. Example: "work.example.com" */
+    domain?: string;
+
+    /** Hardware information block describing BIOS, CPU, and vendor details. */
+    hardware?: {
+        biosDate?: string;
+        biosManufacturer?: string;
+        biosVer?: string;
+        cpuArchitecture?: string;
+        serialNumber?: string;
+        uuid?: string;
+        vendorName?: string;
+    };
+
+    /** Hypervisor hosting the device. Example: "VMware", "Xen" */
+    hypervisor?: string;
+
+    /** Provider-assigned instance identifier. Example: "i-1234567890abcdef" */
+    instanceId?: string;
+
+    /** Type/classification of the asset. Example: "server", "container" */
+    assetType?: string;
+
+    /** OS machine UUID. */
+    osMachineUuid?: string;
+
+    /** Global unique identifier for the entity. */
+    uuid?: string;
+
+    /** Cloud provider resource identifier (ARN, Azure Resource ID, GCP Resource ID). */
+    resourceId?: string;
+
+    /** Cloud account/subscription/project identifier. */
+    account?: string;
+
+    /** Cloud subscription name or reference (open item). */
+    cloudSubscription?: string;
+
+    /** Cloud virtual network identifier. Example: AWS VPC ID, Azure VNet. */
+    vpcId?: string;
+
+    /** Physical or logical location of the entity. Example: "Mumbai Datacenter" */
+    location?: string[];
+
+    /** Designation of the user/device. Example: "Senior Engineer" */
+    designation?: string[];
+
+    /** Roles assigned to the entity/user. Example: ["Google WS Admin"] */
+    userRoles?: string[];
+
+    /** Owner of the entity (user/team/department). Example: "DevOps Team" */
+    owner?: string;
+
+    /** Region associated with the entity. Example: "ap-south-1" */
+    region?: string;
+
+    /** Department linked to the entity. Example: "Finance" */
+    department?: string[];
+
+    /** External identifier from a source system. Example: "CMDB123" */
+    externalSourceId?: string;
+
+    /** Whether MFA is enabled on the email account linked to the entity. */
+    emailMfa?: boolean;
+
+    /** Attack surface classification. Example: "Application, Cloud etc" */
+    attackSurface?: string;
+
+    /** Underlying platform. Example: "Windows", "Linux" */
+    platform?: string;
+
+    /** Whether the entity is internet-facing. */
+    internetFacing?: InternetFacing;
+
+    /** Risk/posture score. Example: "85/100" */
+    assetScore?: string;
+
+    /** List of agent identifiers installed. Example: ["CrowdStrike123"] */
+    agentList?: string[];
+
+    /** List of open ports. Example: ["22", "443"] */
+    openPorts?: string[];
 }
 
 /**
@@ -696,6 +816,18 @@ export interface IpAddress {
      * An IP v6 string.
      */
     ipv6?: string;
+}
+
+/**
+ * Network interface attached to an entity with IP/MAC/type details.
+ */
+export interface NetworkInterface {
+    name?: string;
+    hostname?: string;
+    ipv4?: string;
+    ipv6?: string;
+    macAddress?: string;
+    type?: "private" | "public" | "unknown";
 }
 
 /**
@@ -849,6 +981,21 @@ export interface Evidence {
      * Example: An PDF document or a screenshot stored elsewhere.
      */
     path?: string;
+}
+
+/**
+ * Common Vulnerability and Exposure (CVE) information
+ */
+export interface CVE {
+    /**
+     * The CVE identifier (e.g., "CVE-2023-1234")
+     */
+    id: string;
+
+    /**
+     * The date when this CVE was published
+     */
+    publishDate?: Date;
 }
 
 export interface SecurityContext{
@@ -1055,4 +1202,102 @@ export interface SecurityContext{
      * A place holder to add name value pairs as tags/labels.
      */
     tags?: { [key: string]: string[] | string | boolean };
+
+
+    /** Unique detection identifier, primarily for EDR assessments. */
+    detectionId?: string;
+
+    /** List of CVEs associated with this finding. */
+    cves?: CVE[];
+
+    /** Finding asset type within the entity (e.g., "container", "vm"). */
+    findingAssetType?: string;
+
+    /** Port associated with the finding (e.g., 22, 443). */
+    port?: number;
+
+    /** Protocol used. Example: "TCP", "UDP". */
+    protocol?: string;
+
+    /** Details of suspicious/malicious file. */
+    fileDetails?: {
+        name: string;
+        hashMd5: string;
+        hashSha1: string;
+        hashSha256: string;
+        path: string;
+    };
+
+    /** Process command line (useful in malware/EDR cases). */
+    processCommandline?: string;
+
+    /** List of CWE identifiers associated with the finding. */
+    cweIds?: string[];
+
+    /** List of OWASP identifiers (open question: should always be an array?). */
+    owaspIds?: string[];
+
+    /** Compliance framework mapping (e.g., HIPAA, PCI DSS). */
+    complianceMap?: string[];
+
+    /** CIS Benchmark reference string. */
+    cisBenchmark?: string;
+
+    /** Freeform references (URLs, documents). */
+    references?: string;
+
+    /** Observation notes or analyst comments. */
+    observationText?: string;
+
+    /** CVSS v2, v3, v4 scoring details. */
+    cvssV2Score?: number;
+    cvssV3Score?: number;
+    cvssV4Score?: number;
+
+    /** CVSS v2 details. */
+    cvssv2Details?: {
+        baseScore: number;
+        temporalScore: number;
+        environmentalScore: number;
+        vector: string;
+    };
+
+    /** CVSS v3 details. */
+    cvssV3Details?: {
+        baseScore: number;
+        temporalScore: number;
+        environmentalScore: number;
+        vector: string;
+    };
+
+    /** CVSS v4 details. */
+    cvssV4Details?: {
+        baseScore: number;
+        temporalScore: number;
+        environmentalScore: number;
+        vector: string;
+    };
+
+    /** CPE string identifier. */
+    cpe?: string;
+
+    /** Timestamp since when the issue has been open in the source system. */
+    openSinceInSource?: Date;
+
+    /** Last time this issue was assessed. */
+    lastAssessed?: Date;
+
+    /** Vendor-provided score. */
+    vendorScore?: number;
+
+    // --- Threat Intel Data ---
+
+    /** Whether the vulnerability is exploitable. */
+    isExploitable?: boolean;
+
+    /** Exploit Prediction Scoring System score (0–1). */
+    epss?: number;
+
+    /** Whether the CVE is part of CISA KEV catalog. */
+    cisaKev?: boolean;
 }
